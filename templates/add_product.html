@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Product</h1>
+        <form action="{{ url_for('add_product') }}" method="POST">
+            <label for="barcode_num">Barcode Number (13 digits):</label>
+            <input type="text" id="barcode_num" name="barcode_num" required><br><br>
+
+            <label for="product_name">Product Name:</label>
+            <input type="text" id="product_name" name="product_name" required><br><br>
+
+            <label for="ingredients">Ingredients (comma separated):</label>
+            <input type="text" id="ingredients" name="ingredients" required><br><br>
+
+            <label for="energy">Energy (kcal):</label>
+            <input type="text" id="energy" name="energy" required><br><br>
+
+            <label for="proteins">Proteins (g):</label>
+            <input type="text" id="proteins" name="proteins" required><br><br>
+
+            <label for="carbohydrates">Carbohydrates (g):</label>
+            <input type="text" id="carbohydrates" name="carbohydrates" required><br><br>
+
+            <label for="cholesterol">Cholesterol (g):</label>
+            <input type="text" id="cholesterol" name="cholesterol" required><br><br>
+
+            <label for="sugars">Sugars (g):</label>
+            <input type="text" id="sugars" name="sugars" required><br><br>
+
+            <label for="total_fat">Total Fat (g):</label>
+            <input type="text" id="total_fat" name="total_fat" required><br><br>
+
+            <label for="saturated_fat">Saturated Fat (g):</label>
+            <input type="text" id="saturated_fat" name="saturated_fat" required><br><br>
+
+            <label for="trans_fat">Trans Fat (g):</label>
+            <input type="text" id="trans_fat" name="trans_fat" required><br><br>
+
+            <label for="sodium">Sodium (mg):</label>
+            <input type="text" id="sodium" name="sodium" required><br><br>
+
+            <label for="fruits_vegetables_nuts">Fruits, Vegetables, Nuts (%)</label>
+            <input type="text" id="fruits_vegetables_nuts" name="fruits_vegetables_nuts" required><br><br>
+
+            <label for="dietary_fibre">Dietary Fibre (g):</label>
+            <input type="text" id="dietary_fibre" name="dietary_fibre" required><br><br>
+
+            <label for="allergens">Allergens (comma separated):</label>
+            <input type="text" id="allergens" name="allergens"><br><br>
+
+            <label for="moist">Product Type (solid or beverage):</label>
+            <input type="text" id="moist" name="moist" required><br><br>
+
+            <!-- Additional Nutrients (Optional) -->
+            <label for="calcium">Calcium (mg):</label>
+            <input type="text" id="calcium" name="calcium"><br><br>
+
+            <label for="iodine">Iodine (mg):</label>
+            <input type="text" id="iodine" name="iodine"><br><br>
+
+            <label for="zinc">Zinc (mg):</label>
+            <input type="text" id="zinc" name="zinc"><br><br>
+
+            <label for="vitamin_A">Vitamin A (mcg):</label>
+            <input type="text" id="vitamin_A" name="vitamin_A"><br><br>
+
+            <label for="vitamin_C">Vitamin C (mg):</label>
+            <input type="text" id="vitamin_C" name="vitamin_C"><br><br>
+
+            <label for="vitamin_B">Vitamin B (mcg):</label>
+            <input type="text" id="vitamin_B" name="vitamin_B"><br><br>
+
+            <label for="vitamin_D">Vitamin D (mg):</label>
+            <input type="text" id="vitamin_D" name="vitamin_D"><br><br>
+
+
+            <label for="vitamin_E">Vitamin E (mg):</label>
+            <input type="text" id="vitamin_E" name="vitamin_E"><br><br>
+
+            <label for="vitamin_K">Vitamin K (mg):</label>
+            <input type="text" id="vitamin_K" name="vitamin_K"><br><br>
+
+
+            <input type="submit" value="Add Product">
+        </form>
+    </div>
+</body>
+</html>

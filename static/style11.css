@@ -1,0 +1,275 @@
+
+body {
+    font-family: 'Baloo Da 2'; 
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8; 
+    color: #333; 
+    background-color: white;
+}
+
+
+header {
+    background-color: green; 
+    color: white; 
+    text-align: center;
+    padding: 40px 0; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
+header h1 {
+    margin: 0; 
+    font-size: 3em; 
+    letter-spacing: 1px; 
+}
+
+
+nav {
+    width: 600px; 
+    margin: 40px auto;
+    /* background: white;  */
+    /* border-radius: 10px;  */
+    /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);  */
+    padding: 25px; 
+}
+
+/* Navigation List Styles */
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+nav li {
+    /* margin: 20px 0;  */
+    border-width: 2px;
+    border-color: black;
+    border-style: solid;
+    
+}
+
+/* Navigation Links Styles */
+nav a {
+   
+    text-decoration: solid;
+    color: black; /* Green link color */
+    display: block; /* Make links block-level */
+    padding: 15px; /* Padding for larger clickable area */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.5em; /* Increased font size for links */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Smooth transition */
+    text-align: center;
+   
+    font-weight: 900px;
+   
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2.5em; /* Adjust font size for smaller screens */
+    }
+
+    nav {
+        margin: 20px; 
+        padding: 15px; 
+    }
+
+    nav a {
+        font-size: 1.2em; 
+    }
+}
+
+.logo1{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -30px;
+    display: inline;
+    transform: scale(1.5,1.5);
+}
+
+.panel4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    margin-top: 270px;
+    height: 302px;
+}
+
+.header{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.information{
+margin-left: 825px;
+
+}
+
+.My_Account{
+    margin-left:450px;
+}
+
+.item{
+    font-size: 35px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.container2{
+    display: flex;
+    flex-direction: row;
+
+}
+.profile{
+  
+
+position: absolute;
+width: 282px;
+height: 282px;
+left: 1700px;
+top: 200px;
+transform: scale(0.8,0.8);
+background: url('/static/image.png');
+
+}
+
+.name{
+    text-decoration: solid;
+    color: black;
+    margin-left: 1813px;
+ font-weight: 700;
+ font-size: 30px;
+ margin-top: -350px;
+}
+
+
+.pass{
+position: absolute;
+width: 75px;
+height: 75px;
+left: 850px;
+top: 270px;
+transform: scale(0.6,0.6);
+background: url('/static/password.png');
+}
+
+li{
+    display: flex;
+    flex-direction: column;
+}
+
+.edit{
+   
+
+position: absolute;
+width: 67px;
+height: 80px;
+left: 1340px;
+top: 250px;
+background: url('/static/edit.png');
+background-size: cover;
+transform: scale(0.48,0.48);
+
+}
+
+nav p{
+    color: black;
+}
+
+.p{
+    text-decoration: solid;
+    font-weight: 700;
+}
+
+
+.email{
+position: absolute;
+width: 80px;
+height: 80px;
+left: 845px;
+top: 385px;
+
+background: url('/static/email.png');
+transform: scale(0.6,0.6);
+}
+
+.edit1{
+   
+
+    position: absolute;
+    width: 67px;
+    height: 80px;
+    left: 1340px;
+    top: 360px;
+    background: url('/static/edit.png');
+    background-size: cover;
+    transform: scale(0.48,0.48);
+    
+    }
+
+    .healthform{
+        /* image 25 */
+
+position: absolute;
+width: 65px;
+height: 77.45px;
+left: 848px;
+top: 500px;
+transform: scale(0.6,0.6);
+background: url('/static/healthform.png');
+
+    }
+
+    .edit2{
+   
+
+        position: absolute;
+        width: 67px;
+        height: 80px;
+        left: 1340px;
+        top: 485px;
+        background: url('/static/edit.png');
+        background-size: cover;
+        transform: scale(0.48,0.48);
+    }    
+
+    .logout{
+        /* image 24 */
+
+position: absolute;
+width: 65px;
+height: 78.4px;
+left: 848px;
+top: 625px;
+
+background: url('/static/logout.png');
+transform: scale(0.6,0.6);
+
+    }
+
+    .edit3{
+        
+        position: absolute;
+        width: 67px;
+        height: 80px;
+        left: 1340px;
+        top: 605px;
+        background: url('/static/edit.png');
+        background-size: cover;
+        transform: scale(0.48,0.48);
+    }

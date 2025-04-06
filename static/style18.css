@@ -1,0 +1,125 @@
+/* Reset default browser styles */
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width */
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Clean sans-serif font */
+    background-color: #f0f4f7; /* Light background color */
+    color: #333; /* Dark text color for readability */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container Styles */
+.container {
+    background: white; /* White background for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    padding: 50px; /* Increased padding around the container */
+    width: 100%; /* Full width for small screens */
+    max-width: 500px; /* Limit container width for larger screens */
+    transition: box-shadow 0.3s, transform 0.3s; /* Smooth transition for shadow and transform */
+}
+
+/* Container Hover Effect */
+.container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #28a745; /* Green color for the heading */
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+/* Label Styles */
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold labels for emphasis */
+}
+
+/* Input Styles */
+input[type="password"] {
+    width: 100%; /* Full width for inputs */
+    padding: 12px; /* Padding for inputs */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color and shadow */
+}
+
+/* Input Focus Styles */
+input[type="password"]:focus {
+    border-color: #28a745; /* Green border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Light green shadow on focus */
+}
+
+/* Submit Button Styles */
+input[type="submit"] {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text color */
+    padding: 14px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    font-size: 1em; /* Regular font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    width: 100%; /* Full width for button */
+}
+
+/* Submit Button Hover Effects */
+input[type="submit"]:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Message Styles */
+.messages {
+    margin-top: 20px; /* Space above messages */
+    list-style-type: none; /* Remove default list style */
+}
+
+.messages li {
+    padding: 10px; /* Padding for each message */
+    border-radius: 5px; /* Rounded corners for messages */
+    margin-bottom: 10px; /* Space below messages */
+    color: #fff; /* White text color */
+}
+
+.messages .error {
+    background-color: #dc3545; /* Red for errors */
+}
+
+.messages .success {
+    background-color: #28a745; /* Green for success messages */
+}
+
+input[type="text"] {
+    width: 100%; /* Full width for inputs */
+    padding: 12px; /* Padding for inputs */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color and shadow */
+}
+
+input[type="email"] {
+    width: 100%; /* Full width for inputs */
+    padding: 12px; /* Padding for inputs */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color and shadow */
+}

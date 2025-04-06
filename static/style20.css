@@ -1,0 +1,369 @@
+.search{
+    display:flex;
+    width:1470px;
+    height:50px;
+    border:none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
+    border-radius: 40px;
+    margin-top: 20px; 
+    margin-left: 215px;
+   
+}
+
+.s-icon{
+    background-color:white;
+    color:black;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius:40px;
+    width:45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1470px;
+    height:52px;
+
+}
+
+
+.logo{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top:0px;
+    margin-left:-20px;
+   
+    transform: scale(0.8,0.8);
+}
+
+
+
+
+
+.nav {
+    position: relative; /* Make nav relative for absolute positioning of dropdown */
+}
+
+
+.recommend{
+   
+    margin-left:0px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+
+
+color: black;
+}
+
+
+
+.nav{
+        height:170px;
+        width:100%;
+        background-color:green;
+       
+     }
+    
+
+     .search::placeholder{
+        padding: 12px;
+        font-size: 25px;
+        font-family: 'Baloo Da 2';
+        border: none;
+        font-weight: 700;
+    }
+
+        
+input:focus {
+    outline: none;
+}
+
+
+
+
+#cart:hover{
+    transform: scale(1.7,1.7);
+}
+
+#wishlist:hover{
+    transform: scale(1.7,1.7);
+}
+
+#user-profile:hover{
+    transform: scale(1.7,1.7);
+}
+
+strong{
+    font-size:30px;
+}
+
+.name{
+    font-size: 30px;
+}
+
+p{
+    font-size: 30px;
+}
+
+.logo1{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -30px;
+    display: inline;
+    transform: scale(1.5,1.5);
+}
+
+.panel4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    height: 301px;
+}
+
+.header{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.information{
+margin-left: 825px;
+
+}
+
+.My_Account{
+    margin-left:450px;
+}
+
+.item{
+    font-size: 35px;
+}
+
+#cart, #wishlist, #user-profile{
+    position: relative;
+    top: -30px; 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    transform: scale(1.5, 1.5);
+}
+
+#cart {
+    margin-left: 1950px;
+}
+
+#wishlist {
+    margin-left: 35px;
+}
+
+#user-profile {
+    margin-left: 40px;
+}
+
+.search{
+    display:flex;
+    width:1470px;
+    height:50px;
+    border:none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
+    border-radius: 40px;
+    margin-top: -130px; 
+    margin-left: 215px;
+   font-family: 'Baloo Da 2';
+}
+
+.logo1{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -30px;
+    display: inline;
+    transform: scale(1.5,1.5);
+}
+.name{
+    text-decoration: none;
+}
+
+body {
+    font-family:'Baloo Da 2';
+    background-color:white;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration:none;
+    color:black;
+}
+
+h1{
+    text-align:center;
+    font-size: 70px;
+}
+
+.box1{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.image{
+    display: flex;
+    flex-direction: column;
+}
+
+.img1{
+   
+    background-image: url('/static/team_pics/saloni.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    width:560px;
+    margin-left: 300px;
+}
+
+.name1{
+    margin-top: 10px;
+    margin-left: 460px;
+}
+.img2{
+    
+    background-image: url('/static/team_pics/aneesh.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    width:540px;
+    margin-left: 300px;
+}
+
+.name2{
+    margin-top: 10px;
+    margin-left: 480px;
+}
+
+.box2{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.img3{
+   
+    background-image: url('/static/team_pics/mansa.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    width:560px;
+    margin-left: 200px;
+}
+
+.name3{
+    margin-top: 10px;
+    margin-left: 350px;
+}
+.img4{
+    
+    background-image: url('/static/team_pics/prarthana.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    width:540px;
+    margin-left: 200px;
+}
+
+.name4{
+    margin-top: 10px;
+    margin-left: 350px;
+}
+
+
+.journey{
+    text-align: justify;
+    padding: 30px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.box1, .box2 {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1.5s ease-in forwards;
+}
+
+/* Delaying the animation for Box 2 */
+.box2 {
+    animation-delay: 0.5s;
+}
+.box1, .box2 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img1:hover, .img2:hover,.img3:hover,.img4:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes for Slide-Up Animation */
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Starts slightly lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Ends in the original position */
+    }
+}
+
+/* Styling and Animation for the Journey Section */
+.journey {
+    opacity: 0; /* Initially hidden */
+    animation: slideUpFadeIn 1.5s ease-in-out forwards; /* Apply animation */
+}
+
+/* Delay if needed for synchronization */
+.journey {
+    animation-delay: 0.5s; /* Optional */
+}
+
+/* Additional Styling for Box */
+.journey {
+    background-color: #f4f4f4; /* Light background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 20px;
+    text-align: center;
+    width: 80%; /* Responsive width */
+   
+    margin: 20px auto; /* Center alignment */
+    font-family: 'Baloo Da 2', sans-serif;
+    margin-bottom: 40px;
+}
+
+.inf{
+    text-align: justify;
+    margin-right: 45px;
+    margin-left: 50px;
+    background-color: #f4f4f4;
+    padding: 15px;
+}

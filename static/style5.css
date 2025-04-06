@@ -1,0 +1,368 @@
+
+.nav {
+    position: relative; 
+}
+
+#cart, #wishlist, #user-profile{
+    position: relative;
+    top: -30px; 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    transform: scale(1.5, 1.5);
+}
+
+#cart {
+    margin-left: 1950px;
+}
+
+#wishlist {
+    margin-left: 35px;
+}
+
+#user-profile {
+    margin-left: 40px;
+}
+
+#cart:hover{
+    transform: scale(1.7,1.7);
+}
+
+#wishlist:hover{
+    transform: scale(1.7,1.7);
+}
+
+#user-profile:hover{
+    transform: scale(1.7,1.7);
+}
+
+
+h1{
+
+
+font-family: 'Baloo Da 2';
+font-style: normal;
+font-weight: 700;
+font-size: 64px;
+line-height: 108px;
+margin-left:-300px;
+color: #000000;
+
+}
+
+
+.health_score{
+position: absolute;
+width: 624px;
+height: 2398px;
+left: 1655px;
+top: 170px;
+
+background: rgba(129, 206, 246, 0.48);
+}
+
+img{
+    margin-left:-1800px;
+   
+
+}
+
+
+.nutri{
+position: absolute;
+width: 350px;
+height: 153px;
+left: 110px;
+top: 850px;
+font-family: 'Baloo Da 2';
+font-size: 30px;
+font-weight: 700;
+
+
+}
+
+.name{
+
+position: absolute;
+width: 507px;
+height: 67px;
+left: 780px;
+top: 350px;
+
+font-family: 'Baloo Da 2';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+font-weight: 700;
+
+color: #000000;
+}
+
+.product-info{
+    margin-left: 200px;
+}
+
+
+.allergen{
+    color: black;
+    font-family: 'Baloo Da 2';
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.ingredients{
+    margin-top: -300px;
+    font-size: 30px;
+    margin-left: 200px;
+    font-family: 'Baloo Da 2';
+    width:60%
+}
+
+table{
+    width:60%;
+}
+
+.ch{
+    font-family: 'Baloo Da 2';
+    font-size: 25px;
+}
+td{
+    font-family: 'Baloo Da 2';
+    font-size: 25px;
+}
+
+.warning {
+
+    color: red;
+    font-weight: bold;
+    font-family: 'Baloo Da 2';
+    font-size: 30px;
+}
+.note {
+    color: green;
+    font-weight: bold;
+    font-family: 'Baloo Da 2';
+    font-size: 30px;
+}
+
+.nutritional-warnings{
+    margin-top: 300px;
+    margin-left: 2px;
+}
+
+h2{
+    font-family: 'Baloo Da 2';
+    font-size: 30px;
+    font-weight: 700;
+font-size: 50px;
+line-height: 108px;
+margin-left: 200px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    margin-left: 250px;
+  
+}
+
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+
+
+.quantity-btn {
+    background-color: rgb(24, 191, 24); 
+    color: white;
+    border: none;
+    /* border-radius: 5px; */
+    width: 30px; 
+    height: 45px; 
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    /* margin: 0 5px;  */
+   
+}
+
+
+.quantity-input {
+    width: 70px; 
+    text-align: center; 
+    margin: 0; 
+    border: 1px solid #ccc; 
+    /* border-radius: 5px; */
+    /* margin-right: 10px;  */
+    height: 40px;
+}
+
+
+.btn {
+    background-color:red; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 20px; 
+    font-weight: bold; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    margin-right: 50px;
+    font-family: 'Baloo Da 2';
+    margin-left: 10px;
+}
+
+.btn:hover {
+    background-color: red;
+}
+
+
+.btn:focus {
+    outline: none; 
+   
+}
+
+.logo1{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -30px;
+    display: inline;
+    transform: scale(1.5,1.5);
+}
+.panel4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#f4f4f4;
+    width:1470px;
+    
+}
+
+.header{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.information{
+margin-left: 825px;
+
+}
+
+.My_Account{
+    margin-left:450px;
+}
+
+.item{
+    font-size: 30px;
+}
+
+.logo{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top:0px;
+    margin-left:-20px;
+    
+    transform: scale(0.8,0.8);
+}
+
+.nav{
+    height:170px;
+    width:100%;
+    background-color:green;
+   
+ }
+
+
+ .search::placeholder{
+    padding: 12px;
+    font-size: 25px;
+    font-family: 'Baloo Da 2';
+    border: none;
+    font-weight: 700;
+}
+
+    
+input:focus {
+outline: none;
+}
+
+
+.search{
+    display:flex;
+    width:1470px;
+    height:50px;
+    border:none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
+    border-radius: 40px;
+    margin-top: -130px; 
+    margin-left: 215px;
+   
+}
+
+.s-icon{
+    background-color:white;
+    color:black;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius:40px;
+    width:45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1470px;
+    height:52px;
+
+}
+
+#cart, #wishlist, #user-profile{
+    position: relative;
+    top: -30px; 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    transform: scale(1.5, 1.5);
+}
+
+#cart {
+    margin-left: 1950px;
+}
+
+#wishlist {
+    margin-left: 35px;
+}
+
+#user-profile {
+    margin-left: 40px;
+}
+
+.extra{
+margin-left: 250px;
+font-family: 'Baloo Da 2';
+font-size: 25px;
+}
+
+.ingredient-link{
+    text-decoration: none;
+    color: black;
+}
+
+.product-image img {
+    max-width: 100%; /* Ensure the image fits in the container */
+    height: auto;
+}
+
+.product-image img[src=""] {
+    content: url('/static/product_images/default.jpg'); /* Path to the default image */
+}
+ 

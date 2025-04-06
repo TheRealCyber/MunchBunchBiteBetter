@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style9.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="{{ url_for('post_login_menu') }}"><div class="logo"></div></a>
+        <div class="search-bar">
+            <form method="POST" action="{{ url_for('search_product_by_name') }}">
+                <input type="text" name="product_name" class="search" placeholder="Search for product" required>
+            </form>
+            <a href="{{ url_for('shopping_list') }}"><i class="fa-solid fa-cart-shopping" style="color: #121212;" id="cart"></i></a>
+            <a href="{{ url_for('fav_list') }}"><i class="fa-solid fa-heart" style="color: #0d0d0d;" id="wishlist"></i></a>
+            <a href="{{ url_for('view_profile') }}"><i class="fa-solid fa-user" style="color: #050505;" id="user-profile"></i></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 class="title">Shopping List</h1>
+        
+        <!-- Goal Friendly Products -->
+        {% if goal_friendly_products %}
+            <h2 class="goal-friendly">Goal Friendly Products</h2>
+            <ul class="product-list">
+                {% for item in goal_friendly_products %}
+                    <li class="product-item">
+                        <img src="{{ url_for('static', filename='product_images/' + item[2] + '.jpg') }}" 
+                             alt="Image of {{ item[3] }}" 
+                             class="product-image">
+                        <div class="product-info">
+                            <p class="product-name">{{ item[3] }}</p>
+                            <p class="product-quantity">Quantity: {{ item[30] }}</p>
+                        </div>
+                        <form action="{{ url_for('delete_from_shop') }}" method="post" class="delete-form">
+                            <input type="hidden" name="product_name" value="{{ item[3] }}">
+                            <button type="submit">Delete</button>
+                            <input type="number" name="quantity_to_delete" placeholder="Quantity to delete" required>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="goal">No Goal Friendly Products in your shopping list.</p>
+        {% endif %}
+
+        <!-- Goal Unfriendly Products -->
+        {% if goal_unfriendly_products %}
+            <h2 class="goal-unfriendly">Goal Unfriendly Products</h2>
+            <ul class="product-list">
+                {% for item in goal_unfriendly_products %}
+                    <li class="product-item">
+                        <img src="{{ url_for('static', filename='product_images/' + item[2] + '.jpg') }}" 
+                             alt="Image of {{ item[3] }}" 
+                             class="product-image">
+                        <div class="product-info">
+                            <p class="product-name">{{ item[3] }}</p>
+                            <p class="product-quantity">Quantity: {{ item[30] }}</p>
+                        </div>
+                        <form action="{{ url_for('delete_from_shop') }}" method="post" class="delete-form">
+                            <input type="hidden" name="product_name" value="{{ item[3] }}">
+                            <button type="submit">Delete</button>
+                            <input type="number" name="quantity_to_delete" placeholder="Quantity to delete" required>
+                        </form>
+                    </li>
+                {% endfor %}      
+            </ul>
+        {% else %}
+            <p class="goal">No Goal Unfriendly Products in your shopping list.</p>
+            <a href="{{ url_for('nutrition_summary_shop') }}" class="nutrition-summary-link">Nutritional Summary of Shopping List</a>
+        {% endif %}
+    </div>
+    
+    <div class="panel4">
+        <div class="logo1"></div>
+        <div class="information">
+            <p class="header">Information</p>
+            <a href="{{ url_for('about_us') }}"><p class="item">About Us</p></a>
+        </div>
+        <div class="My_Account">
+            <p class="header">Contact Us:</p>
+            <p class="item">goneenterprisesinc@gmail.com</p>
+        </div>
+    </div>
+
+</body>
+</html>

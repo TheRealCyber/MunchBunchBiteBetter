@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <title>Post Login Menu</title>
+</head>
+<body>
+    <div class="panel1">
+        <div class="nav">
+            <div class="logo"></div>
+            <div class="search-bar">
+                <form method="POST" action="{{ url_for('search_product_by_name') }}">
+                    <input type="text" name="product_name" class="search" placeholder="Search for product" required>
+                </form>
+            </div>
+            <a href="{{ url_for('shopping_list') }}"><i class="fa-solid fa-cart-shopping" style="color: #121212;" id="cart"></i></a>
+            <a href="{{ url_for('fav_list') }}"><i class="fa-solid fa-heart" style="color: #0d0d0d;" id="wishlist"></i></a>
+            <a href="{{ url_for('view_profile') }}"><i class="fa-solid fa-user" style="color: #050505;" id="user-profile"></i></a>
+            <i class="fa-solid fa-filter" style="color: black; cursor: pointer;" id="filter"></i>
+            <!-- <div class="dark-mode-toggle">
+                <label for="darkModeSwitch">🌙 Dark Mode</label>
+                <input type="checkbox" id="darkModeSwitch">
+            </div> -->
+        </div>
+        <h1>Welcome, {{ username }}!</h1>
+        <p class="tagline">Making healthier choices is just a scan away!</p>
+        <div class="image2"></div>
+        <div class="image3"></div>
+        <div class="image1"></div>
+    </div>
+   
+    <div class="panel2">
+        <div class="upload">
+            <form method="POST" action="{{ url_for('recommend_ingredients',username=username) }}">
+                <a href="{{ url_for('recommend_ingredients', username=username) }}" style="text-decoration: none;">
+                    <i class="fa-solid fa-carrot" id="carrot" style="color:black;"></i>
+                </a>
+                <div class="arrow">
+                </div>
+                <div class="text">
+                    <button type="submit" style="background: none; border: none; cursor: pointer;font-family: 'Baloo Da 2'" class="recommend">Recommend Me</button>
+                </div>
+            </form>
+        </div>
+        
+            
+        </div>
+        <div class="scan">
+            <div class="camera"><a href="{{ url_for('scan_barcode_route') }}"><i class="fa-solid fa-barcode" style="color: black;"></i></a></div>
+            <div class="text1"><a href="{{ url_for('scan_barcode_route') }}">Scan Barcode</a></div>
+        </div>
+
+        <div class="view">
+            <a href="{{ url_for('view_all_products') }}"><div class="list"><i class="fa-solid fa-list" style="color: black;"></i></div></a> 
+            <div class="text3"><a href="{{ url_for('view_all_products') }}">View products</a></div>
+        </div>
+
+        <div class="enter">
+            <form method="POST" action="{{ url_for('post_login_menu') }}">
+                <input type="text" name="barcode_num" class="enter1" placeholder="Enter barcode number" required>
+            </form>
+        </div>
+
+        {% if error %}
+        <div class="error-message">{{ error }}</div>
+        {% endif %}
+
+        {% if product %}
+        <div class="product-info">
+            <h2>{{ product.product_name }}</h2>
+            <p>Barcode: {{ product.barcode_num }}</p>
+            <p>Ingredients: {{ product.ingredients }}</p>
+            <p>Energy: {{ product.energy }} kcal</p>
+            <p>Proteins: {{ product.proteins }} g</p>
+            <p>Carbohydrates: {{ product.carbohydrates }} g</p>
+            <p>Cholesterol: {{ product.cholesterol }} g</p>
+            <p>Sugars: {{ product.sugars }} g</p>
+            <p>Total Fat: {{ product.total_fat }} g</p>
+            <p>Saturated Fat: {{ product.saturated_fat }} g</p>
+            <p>Trans Fat: {{ product.trans_fat }} g</p>
+            <p>Sodium: {{ product.sodium }} g</p>
+            <p>Fruits/Vegetables/Nuts: {{ product.fruits_vegetables_nuts }} g</p>
+            <p>Dietary Fibre: {{ product.dietary_fibre }} g</p>
+            <p>Allergens: {{ product.allergens }}</p>
+            <p>Nutrition Grade: {{ product.nutrition_grade }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="panel3">
+        <div class="green-overlay">
+            <div class="tag1"><p class="tag">Your health is in your hands.</p></div>
+        </div>
+    </div>
+
+    <div class="panel4">
+        <div class="logo1"></div>
+        <div class="information">
+            <p class="header">Information</p>
+            <a href="{{ url_for('about_us') }}"><p class="item">About Us</p></a>
+        </div>
+        <div class="My_Account">
+            <p class="header">Contact Us:</p>
+            <p class="item">goneenterprisesinc@gmail.com</p>
+            
+        </div>
+    </div>
+
+    <div class="filters" id="filterForm" style="top: 50px; left: 20px;">
+        <form method="POST" action="{{ url_for('filter_products') }}">
+            <label><input type="checkbox" name="filters" value="1"> Low Carbohydrates</label>
+            <label><input type="checkbox" name="filters" value="2"> High Proteins</label>
+            <label><input type="checkbox" name="filters" value="3"> Low Sugars</label>
+            <label><input type="checkbox" name="filters" value="4"> Low Sodium</label>
+            <label><input type="checkbox" name="filters" value="5"> Low Fat</label>
+            <label><input type="checkbox" name="filters" value="6"> Low Saturated Fat</label>
+            <label><input type="checkbox" name="filters" value="7"> Dairy-Free</label>
+            <label><input type="checkbox" name="filters" value="8"> Wheat-Free</label>
+            <label><input type="checkbox" name="filters" value="9"> Nut-Free</label>
+            <label><input type="checkbox" name="filters" value="10"> Soy-Free</label>
+            <label><input type="checkbox" name="filters" value="11"> Sulphite-Free</label>
+            <input type="submit" value="Apply Filters">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('filter').addEventListener('click', function() {
+            const filterForm = document.getElementById('filterForm');
+            // Toggle the display of the filter form
+            filterForm.style.display = filterForm.style.display === 'block' ? 'none' : 'block';
+        });
+   
+    </script>
+    <script src="{{ url_for('static', filename='dark-mode.js') }}"></script>
+
+
+<!-- NutriBot Floating Button -->
+<div id="nutribot-btn">
+    <i class="fas fa-robot"></i>
+</div>
+
+<!-- NutriBot Chatbox -->
+<div id="nutribot-chatbox">
+    <div class="chat-header">
+        <span>🤖 NutriBot</span>
+        <span id="close-chat">&times;</span>
+    </div>
+    <div class="chat-body" id="chat-body"></div>
+    <div class="chat-input">
+        <input type="text" id="chat-input" placeholder="Ask me about food, ingredients, or health...">
+        <button id="send-btn">Send</button>
+    </div>
+</div>
+
+<!-- Chatbot JavaScript -->
+<script>
+    const chatBtn = document.getElementById("nutribot-btn");
+    const chatBox = document.getElementById("nutribot-chatbox");
+    const closeChat = document.getElementById("close-chat");
+    const chatBody = document.getElementById("chat-body");
+    const sendBtn = document.getElementById("send-btn");
+    const chatInput = document.getElementById("chat-input");
+
+    chatBtn.addEventListener("click", () => {
+        chatBox.style.display = "flex";
+    });
+
+    closeChat.addEventListener("click", () => {
+        chatBox.style.display = "none";
+    });
+
+    sendBtn.addEventListener("click", async () => {
+        const userMessage = chatInput.value.trim();
+        if (!userMessage) return;
+
+        appendMessage(userMessage, "user");
+        chatInput.value = "";
+
+        const response = await fetch("/nutribot", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: userMessage })
+        });
+
+        const data = await response.json();
+        appendMessage(data.reply, "bot");
+    });
+
+    function appendMessage(message, sender) {
+        const msgDiv = document.createElement("div");
+        msgDiv.classList.add("message", sender);
+        msgDiv.textContent = message;
+        chatBody.appendChild(msgDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+</script>
+
+</body>
+</html>

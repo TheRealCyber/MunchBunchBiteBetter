@@ -1,0 +1,654 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Da 2';
+}
+
+
+.panel1{
+
+
+width: 100%;
+height: 570px;
+
+background-color: green;
+
+}
+ .nav{
+    height:106px;
+    width:100%;
+    background-color:rgb(149, 236, 149);
+ }
+
+
+
+
+.search{
+
+    font-family: 'Baloo Da 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+ 
+    border:none;
+    
+    color: rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px ;
+}
+
+.search::placeholder{
+    padding: 12px;
+    font-size: 25px;
+    font-family: 'Baloo Da 2';
+    
+}
+
+/* .s-icon{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+     margin-top: 36px;
+     margin-left: 930px;
+     height: 50px;
+     width: 50px;
+     border-top-right-radius: 40px;
+     border-bottom-right-radius:40px ;
+} */
+
+
+.image1{
+position: absolute;
+width: 516px;
+height: 477px;
+left: 1250px;
+top: 130px;
+background-image: url('/static/panel1.png');
+
+
+
+    
+  
+  
+}
+
+
+h1{
+position: absolute;
+width: 1000px;
+height: 157px;
+left: 83px;
+top: 200px;
+
+font-family: 'Baloo Da 2';
+font-style: normal;
+font-weight: 700;
+font-size: 100px;
+color: #D4EDA4;
+opacity: 0;
+transform: scale(0.9);
+animation: fadeInScale 1.0s ease-out forwards;
+animation-delay: 0.5s;
+
+}
+
+
+.tagline{
+
+position: absolute;
+width: 864px;
+height: 54px;
+left: 83px;
+top: 350px;
+
+font-family: 'Baloo Da 2';
+font-style: normal;
+font-weight: 600;
+font-size: 40px;
+color: #FFFFFF;
+
+ 
+ opacity: 0;
+ transform: scale(0.9);
+ animation: fadeInScale 1.0s ease-out forwards;
+ animation-delay: 0.5s;
+
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+
+.upload{
+  
+
+position: absolute;
+width: 350px;
+height: 303px;
+left: 250px;
+top: 650px;
+font-style: normal;
+background:#7ed967;
+font-family: 'Baloo Da 2';
+background:#e78382;
+background:#83dcfc;
+border-radius: 90px;
+
+}
+
+.arrow{
+    margin-left: 297px;
+    margin-top: 100px;
+    transform: scale(8,8);
+}
+
+
+.text{
+    margin-top: 100px;
+    margin-left:35px;
+
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 48px;
+font-family: 'Baloo Da 2';
+color: black;
+}
+
+.scan{
+    
+
+position: absolute;
+width: 350px;
+height: 303px;
+left: 900px;
+top: 650px;
+
+background:#83dcfc;
+border-radius: 90px;
+
+}
+
+.camera{
+    margin-left: 297px;
+    margin-top: 100px;
+    transform: scale(8,8);
+}
+
+.text1{
+    margin-top: 100px;
+    margin-left:70px;
+    font-family: 'Baloo Da 2';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 48px;
+
+color: black;
+}
+
+.view{
+    
+
+position: absolute;
+width: 350px;
+height: 303px;
+left: 1580px;
+top: 650px;
+
+background:#7ed967;
+background:#83dcfc;
+border-radius: 90px;
+
+}
+.list{
+    margin-left: 297px;
+    margin-top: 100px;
+    transform: scale(8,8);
+}
+
+.text3{
+    margin-top: 100px;
+    margin-left:65px;
+
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 48px;
+font-family: 'Baloo Da 2';
+color:black ;
+}
+
+.or{
+   font-size: 50px;
+   font-weight: 700;
+   margin-top: 475px;
+   margin-left:885px;
+}
+
+.enter1{
+
+    
+    width: 1650px;
+    height: 80px;
+    margin-top: 500px;
+    margin-left:250px;
+    font-family: 'Baloo Da';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+ 
+border-style: solid;
+border-color: #0d751f;
+border-radius: 40px;
+font-family: 'Baloo Da';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+}
+
+
+
+.panel3 {
+    width: 100%;
+    margin-top: 100px;
+    height: 459px;
+    background-image: url('/static/hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    position: relative; 
+}
+
+.green-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 128, 0, 0.4); 
+    z-index: 1; 
+}
+
+.tag1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tag{
+    margin-top: 175px;
+    font-size: 84px;
+    font-weight: 700;
+}
+
+.panel4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.information{
+margin-left: 825px;
+
+}
+
+.My_Account{
+    margin-left:450px;
+}
+
+.item{
+    font-size: 35px;
+}
+
+
+    .nav {
+        display: flex;
+        flex-direction: row; 
+        justify-content: center; 
+        align-items: center;
+        height:150px;
+    }
+    
+    .enter1::placeholder{
+        padding: 12px;
+        font-size: 30px;
+        font-family: 'Baloo Da 2';
+        
+    }
+
+    
+input:focus {
+    outline: none;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+
+.search{
+    display:flex;
+    width:1470px;
+    height:50px;
+  
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
+    border-radius: 40px;
+    margin-top: -10px; 
+    
+   
+}
+
+.s-icon{
+    background-color:white;
+    color:black;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius:40px;
+    width:45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1470px;
+    height:52px;
+
+}
+
+#cart, #wishlist, #user-profile,#filter {
+    position: relative;
+    top: 20px; 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    transform: scale(1.5, 1.5);
+}
+
+#cart {
+    margin-left: 100px;
+}
+
+#wishlist {
+    margin-left: 35px;
+}
+
+#user-profile {
+    margin-left: 40px;
+}
+
+#filter {
+    margin-left: 45px;
+}
+
+#cart:hover{
+    transform: scale(1.7,1.7);
+}
+
+#wishlist:hover{
+    transform: scale(1.7,1.7);
+}
+
+#user-profile:hover{
+    transform: scale(1.7,1.7);
+}
+
+#filter:hover{
+    transform: scale(1.7,1.7);
+}
+.logo{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -100px;
+    display: inline;
+    transform: scale(1.0,1.0);
+}
+
+.logo1{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -20px;
+    display: inline;
+    transform: scale(1.5,1.5);
+}
+
+
+.filters {
+    position: absolute; 
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000; 
+    display: none; 
+    margin-left: 2000px;
+}
+
+/* .nav {
+    position: relative; 
+} */
+
+
+.filters form {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px; 
+    font-size: 20px;
+    height: 570px;
+}
+
+.filters label {
+    margin: 5px 0;
+}
+
+.filters input[type="submit"] {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #4CAF50; 
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.filters input[type="submit"]:hover {
+    background-color: #45a049;
+  
+}
+
+.recommend{
+   
+    margin-left:0px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+
+
+color: black;
+}
+
+/* Default Light Mode */
+body {
+    background-color: #f8f9fa;
+    color: #121212;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #f8f9fa;
+}
+
+/* Styling the Dark Mode Toggle */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dark-mode-toggle label {
+    font-family: 'Baloo Da 2', sans-serif;
+    cursor: pointer;
+    color: #333;
+}
+
+#carrot{
+    margin-left: 180px;
+    margin-top: 100px;
+    transform: scale(8,8);
+}
+
+
+
+/* NutriBot Floating Button */
+#nutribot-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 75px;
+    height: 75px;
+    background-color: #43b77a;
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.2s ease;
+}
+
+#nutribot-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Chatbox */
+#nutribot-chatbox {
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    width: 480px;
+    height: 680px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Baloo Da 2', cursive;
+    z-index: 998;
+    display: none; /* Hidden until activated */
+}
+
+/* Header */
+.chat-header {
+    background-color: #43b77a;
+    color: white;
+    padding: 18px;
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#close-chat {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Chat body */
+.chat-body {
+    flex: 1;
+    padding: 18px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+
+.message {
+    margin-bottom: 14px;
+    padding: 12px 18px;
+    border-radius: 18px;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.message.user {
+    background-color: #d3f2e5;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.message.bot {
+    background-color: #eeeeee;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+/* Input */
+.chat-input {
+    display: flex;
+    padding: 14px 18px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-family: 'Baloo Da 2', cursive;
+}
+
+.chat-input button {
+    background-color: #43b77a;
+    color: white;
+    border: none;
+    padding: 0 18px;
+    margin-left: 12px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.chat-input button:hover {
+    background-color: #369563;
+}

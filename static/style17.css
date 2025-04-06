@@ -1,0 +1,89 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container for the form */
+.container {
+    width: 80%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #4CAF50;
+    margin: 20px;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Label Styling */
+label {
+    font-weight: bold;
+    color: #2c3e50;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* Input Styling */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Radio Button Styling */
+input[type="radio"] {
+    margin-right: 8px;
+}
+
+/* Submit Button Styling */
+input[type="submit"] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input[type="submit"] {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <title>Product Information</title>
+    <style>
+        body {
+            font-family: 'Baloo Da 2';
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .warning {
+            color: red;
+            font-weight: bold;
+        }
+        .note {
+            color: green;
+            font-weight: bold;
+        }
+
+        .nav{
+        height:170px;
+        width:100%;
+        background-color:green;
+        margin-bottom: 200px;
+       
+     }
+    
+
+     .search::placeholder{
+        padding: 12px;
+        font-size: 25px;
+        font-family: 'Baloo Da 2';
+        border: none;
+        font-weight: 700;
+    }
+
+        
+input:focus {
+    outline: none;
+}
+
+.logo{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top:0px;
+    margin-left:-20px;
+   
+    transform: scale(0.8,0.8);
+}
+
+
+#cart:hover{
+    transform: scale(1.7,1.7);
+}
+
+#wishlist:hover{
+    transform: scale(1.7,1.7);
+}
+
+#user-profile:hover{
+    transform: scale(1.7,1.7);
+}
+
+strong{
+    font-size:30px;
+}
+
+.name{
+    font-size: 30px;
+}
+
+p{
+    font-size: 30px;
+}
+
+#cart, #wishlist, #user-profile{
+    position: relative;
+    top: -30px; 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    transform: scale(1.5, 1.5);
+}
+
+#cart {
+    margin-left: 1950px;
+}
+
+#wishlist {
+    margin-left: 35px;
+}
+
+#user-profile {
+    margin-left: 40px;
+}
+
+.search{
+    display:flex;
+    width:1470px;
+    height:50px;
+    border:none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
+    border-radius: 40px;
+    margin-top: -130px; 
+    margin-left: 215px;
+   
+} 
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="{{url_for('post_login_menu')}}"><div class="logo"></div></a>
+        <div class="search-bar">
+            <form method="POST" action="{{ url_for('search_product_by_name') }}">
+                <input type="text" name="product_name" class="search" placeholder="Search for product" required>
+            </form>
+            <a href="{{ url_for('shopping_list') }}"><i class="fa-solid fa-cart-shopping" style="color: #121212;" id="cart"></i></a>
+            <a href="{{ url_for('fav_list') }}"><i class="fa-solid fa-heart" style="color: #0d0d0d;" id="wishlist"></i></a>
+            <a href="{{ url_for('view_profile') }}"><i class="fa-solid fa-user" style="color: #050505;" id="user-profile"></i></a>
+        </div>
+    <div class="container">
+        <h1>Product Information</h1>
+        <div class="product-image">
+           
+            
+            <img src="{{ url_for('static', filename='product_images/' + product.get('barcode_num', '') + '.jpg') }}" 
+                 alt="{{ product.get('product_name', 'No image') }}"
+                 style="width: 500px; height: auto;"
+                 >
+        </div>
+        
+        <table>
+            
+            <tr>
+                <th>Product Name</th>
+                <td>{{ product.get('product_name', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Ingredients</th>
+                <td>{{ product.get('ingredients', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Energy (kcal)</th>
+                <td>{{ product.get('energy', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Proteins (g)</th>
+                <td>{{ product.get('proteins', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Carbohydrates (g)</th>
+                <td>{{ product.get('carbohydrates', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Cholesterol (g)</th>
+                <td>{{ product.get('cholesterol', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Sugars (g)</th>
+                <td>{{ product.get('sugars', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Total Fat (g)</th>
+                <td>{{ product.get('total_fat', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Saturated Fat (g)</th>
+                <td>{{ product.get('saturated_fat', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Trans Fat (g)</th>
+                <td>{{ product.get('trans_fat', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Sodium (g)</th>
+                <td>{{ product.get('sodium', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Fruits/Vegetables/Nuts (g)</th>
+                <td>{{ product.get('fruits_vegetables_nuts', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Dietary Fibre (g)</th>
+                <td>{{ product.get('dietary_fibre', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Allergens</th>
+                <td>{{ product.get('allergens', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Nutrition Grade</th>
+                <td>{{ product.get('nutrition_grade', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Calcium (g)</th>
+                <td>{{ product.get('calcium', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Iodine (g)</th>
+                <td>{{ product.get('iodine', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Zinc (g)</th>
+                <td>{{ product.get('zinc', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Phosphorous (g)</th>
+                <td>{{ product.get('phosphorous', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Magnesium (g)</th>
+                <td>{{ product.get('magnesium', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Vitamin A (g)</th>
+                <td>{{ product.get('vitamin_a', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Vitamin B (g)</th>
+                <td>{{ product.get('vitamin_b', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Vitamin C (g)</th>
+                <td>{{ product.get('vitamin_c', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Vitamin D (g)</th>
+                <td>{{ product.get('vitamin_d', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Vitamin E (g)</th>
+                <td>{{ product.get('vitamin_e', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Vitamin K (g)</th>
+                <td>{{ product.get('vitamin_k', 'N/A') }}</td>
+            </tr>
+            <tr>
+                <th>Other</th>
+                <td>{{ product.get('other', 'N/A') }}</td>
+            </tr>
+            
+        </table>
+
+        <!-- Allergen Warnings -->
+        <div class="allergen-warnings">
+            {% if 'milk' in product.get('allergens', '') %}
+                <p class="warning">⚠️ WARNING: This product contains dairy!</p>
+            {% endif %}
+            {% if 'wheat' in product.get('allergens', '') %}
+                <p class="warning">⚠️ WARNING: This product contains wheat!</p>
+            {% endif %}
+            {% if 'soy' in product.get('allergens', '') %}
+                <p class="warning">⚠️ WARNING: This product contains soy!</p>
+            {% endif %}
+            {% if 'peanut' in product.get('allergens', '') %}
+                <p class="warning">⚠️ WARNING: This product contains peanuts!</p>
+            {% endif %}
+            {% if 'nut' in product.get('allergens', '') %}
+                <p class="warning">⚠️ WARNING: This product contains nuts!</p>
+            {% endif %}
+            {% if 'sulphite' in product.get('allergens', '') %}
+                <p class="warning">⚠️ WARNING: This product contains sulphites!</p>
+            {% endif %}
+        </div>
+
+        <!-- Nutritional Warnings -->
+        <div class="nutritional-warnings">
+            {% if product.get('sugars', 0) > 22.5 %}
+                <p class="warning">⚠️ WARNING: This product is high in sugar!</p>
+            {% elif product.get('sugars', 0) <= 5 %}
+                <p class="note">🍎 NOTE: This product is low in sugar!</p>
+            {% endif %}
+
+            {% if product.get('sodium', 0) > 0.6 %}
+                <p class="warning">⚠️ WARNING: This product is high in sodium!</p>
+            {% elif product.get('sodium', 0) <= 0.1 %}
+                <p class="note">🍎 NOTE: This product is low in sodium!</p>
+            {% endif %}
+
+            {% if product.get('saturated_fat', 0) > 5 %}
+                <p class="warning">⚠️ WARNING: This product is high in saturated fat!</p>
+                {% elif product.get('saturated_fat', 0) < 0.1 %}
+                <p class="note">🌱 NOTE: This product is free of saturated fat!</p>
+            {% elif product.get('saturated_fat', 0) < 1.5 %}
+                <p class="note">🥑 NOTE: This product is low in saturated fat!</p>    
+            {% endif %}
+        </div>
+    </div>
+    
+     <!-- Display Product Image -->
+
+</body>
+</html>

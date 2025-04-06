@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Account Info</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style14.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+   
+    <div class="container">
+        <h1>Change Account Info</h1>
+
+        <!-- Selection Form -->
+        <form action="{{ url_for('change_account_info') }}" method="post" class="form">
+            <label>Select an option:</label>
+            <select name="option" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="change_username">Change Username</option>
+                <option value="change_phone_number">Change Phone Number</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- Username Change Form -->
+        {% if show_username_form %}
+        <form action="{{ url_for('process_change') }}" method="post" class="form">
+            <input type="hidden" name="form_type" value="username">
+            <h2>Change Username</h2>
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <br>
+            <label>Current Password:</label>
+            <input type="password" name="password" required>
+            <br>
+            <label>New Username:</label>
+            <input type="text" name="new_username" required>
+            <br>
+            <input type="submit" value="Change Username">
+        </form>
+        {% endif %}
+
+        <!-- Phone Number Change Form -->
+        {% if show_phone_form %}
+        <form action="{{ url_for('process_change') }}" method="post" class="form">
+            <input type="hidden" name="form_type" value="phone_number">
+            <h2>Change Phone Number</h2>
+            <label>Username:</label>
+            <input type="text" name="username" required>
+            <br>
+            <label>Current Password:</label>
+            <input type="password" name="password" required>
+            <br>
+            <label>New Phone Number:</label>
+            <input type="text" name="new_phone" required>
+            <br>
+            <input type="submit" value="Change Phone Number">
+        </form>
+        {% endif %}
+    </div>
+</body>
+</html>

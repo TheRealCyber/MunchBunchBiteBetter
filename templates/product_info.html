@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style5.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Product Information</title>
+    <style>
+        body {
+           
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+           
+        }
+       
+        
+      
+        .product-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .allergens {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 70px;
+        }
+        .allergen-bubble {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            font-family: 'Baloo Da 2';
+            transform: scale(1.4,1.4);
+            margin-left: 6px;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+       
+        <div class="nav">
+            <a href="{{url_for('post_login_menu')}}"><div class="logo"></div></a>
+            <div class="search-bar">
+                <form method="POST" action="{{ url_for('search_product_by_name') }}">
+                    <input type="text" name="product_name" class="search" placeholder="Search for product" required>
+                </form>
+            </div>
+            <a href="{{ url_for('shopping_list') }}"><i class="fa-solid fa-cart-shopping" style="color: #121212;" id="cart"></i></a>
+            <a href="{{ url_for('fav_list') }}"><i class="fa-solid fa-heart" style="color: #0d0d0d;" id="wishlist"></i></a>
+            <a href="{{ url_for('view_profile') }}"><i class="fa-solid fa-user" style="color: #050505;" id="user-profile"></i></a>
+        </div>
+        <h1>Product Details</h1>
+    <div class="container">
+        <div class="health_score">
+            <h2>Your Score</h2>
+             <!-- Allergen Warnings -->
+        <div class="allergen-warnings">
+            {% if 'milk' in product[15] %}
+                <p class="warning">⚠️ WARNING: This product contains dairy!</p>
+            {% endif %}
+            {% if 'wheat' in product[15] %}
+                <p class="warning">⚠️ WARNING: This product contains wheat!</p>
+            {% endif %}
+            {% if 'soy' in product[15] %}
+                <p class="warning">⚠️ WARNING: This product contains soy!</p>
+            {% endif %}
+            {% if 'peanut' in product[15] %}
+                <p class="warning">⚠️ WARNING: This product contains peanut!</p>
+            {% endif %}
+            {% if 'nut' in product[15] %}
+                <p class="warning">⚠️ WARNING: This product contains nuts!</p>
+            {% endif %}
+            {% if 'sulphite' in product[15] %}
+                <p class="warning">⚠️ WARNING: This product contains sulphite!</p>
+            {% endif %}
+        </div>
+
+        <!-- Nutritional Warnings -->
+        <div class="nutritional-warnings">
+            {% if product[8] > 22.5 %}
+                <p class="warning">⚠️ WARNING: This product is high in sugar!</p>
+            {% elif product[8] <= 5 %}
+                <p class="note">🍎 NOTE: This product is low in sugar!</p>
+            {% elif product[8] == 0 %}
+                <p class="note">🍎 NOTE: This product has no sugar!</p>
+            {% endif %}
+
+            {% if product[12] > 0.6 %}
+                <p class="warning">⚠️ WARNING: This product is high in sodium!</p>
+            {% elif product[12] <= 0.1 %}
+                <p class="note">🥗 NOTE: This product is low in sodium!</p>
+            {% endif %}
+
+            {% if product[5] * 4 / product[4] * 100 >= 20 %}
+                <p class="note">💪 NOTE: This product is high in protein!</p>
+            {% endif %}
+
+            {% if product[9] > 17.5 %}
+                <p class="warning">🍔 WARNING: This product is high in total fat!</p>
+            {% elif product[9] < 0.5 %}
+                <p class="note">🥬 NOTE: This product is fat-free!</p>
+            {% elif product[9] < 3 %}
+                <p class="note">🥗 NOTE: This product is low in fat!</p>
+            {% endif %}
+
+            {% if product[10] > 5 %}
+                <p class="warning">🥓 WARNING: This product is high in saturated fat!</p>
+            {% elif product[10] < 0.1 %}
+                <p class="note">🌱 NOTE: This product is free of saturated fat!</p>
+            {% elif product[10] < 1.5 %}
+                <p class="note">🌿 NOTE: This product is low in saturated fat!</p>
+            {% endif %}
+        </div>
+        </div>
+        <div>
+        <div class="product-image">
+            {% if product[1] %}
+                <img src="{{ url_for('static', filename='product_images/' + product[1] + '.jpg') }}" 
+                     alt="{{ product[1] }}"
+                     style="width: 500px; height: auto;">
+                    
+            {% endif %}
+        </div>
+       
+        <p class="ingredients"><strong>Ingredients: </strong>
+            {% for ingredient in product[3].split(',') %}
+              <a href="https://en.wikipedia.org/wiki/{{ ingredient.strip() }}" target="_blank" class="ingredient-link">{{ ingredient.strip() }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+          </p>
+        <div class="buttons">
+            <form method="POST" action="{{ url_for('add_to_shopping_list_view') }}" class="cart-button">
+                <input type="hidden" name="barcode" value="{{ product[1] }}">
+                <div class="quantity-control">
+                    <button type="button" class="quantity-btn minus">-</button>
+                    <input type="number" name="quantity" value="1" required min="1" class="quantity-input">
+                    <button type="button" class="quantity-btn plus">+</button>
+                    <button type="submit" class="btn">Add to Cart</button> 
+                </div>
+            </form>
+           
+            <form method="POST" action="{{ url_for('add_to_favorite') }}" class="fav-button">
+                <input type="hidden" name="barcode" value="{{ product[1] }}">
+                <div class="quantity-control">
+                    <button type="submit" class="btn">Add to Favorite</button>
+                </div>
+            </form>
+        </div>
+        <p class="extra">*click on any ingredient to learn more.</p>
+        
+        <p class="name">{{ product[2] }}</p>
+        <p class="nutri">
+          
+            Nutrition Grade: {{ product[16] }}</p><br>
+
+        <div class="product-info">
+            <p class="allergen">Allergens:</p>
+            <div class="allergens">
+                {% for allergen in product[15].split(',') %}
+                    <span class="allergen-bubble">{{ allergen }}</span>
+                {% endfor %}
+            </div>
+
+        
+                <table border="1" cellpadding="10" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th><strong class="ch">Nutrition Information</strong></th>
+                            <th><strong class="ch">Amount</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                        <tr>
+                            <td>Energy (kcal)</td>
+                            <td>{{ product[4] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Proteins (g)</td>
+                            <td>{{ product[5] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Carbohydrates (g)</td>
+                            <td>{{ product[6] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Cholesterol (g)</td>
+                            <td>{{ product[7] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Sugars (g)</td>
+                            <td>{{ product[8] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Total Fat (g)</td>
+                            <td>{{ product[9] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Saturated Fat (g)</td>
+                            <td>{{ product[10] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Trans Fat (g)</td>
+                            <td>{{ product[11] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Sodium (g)</td>
+                            <td>{{ product[12] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Fruits/Vegetables/Nuts (g)</td>
+                            <td>{{ product[13] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Dietary Fibre (g)</td>
+                            <td>{{ product[14] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Calcium (g)</td>
+                            <td>{{ product[17] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Iodine (g)</td>
+                            <td>{{ product[18] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Zinc (g)</td>
+                            <td>{{ product[19] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Phosphorous (g)</td>
+                            <td>{{ product[20] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Magnesium (g)</td>
+                            <td>{{ product[21] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin A (g)</td>
+                            <td>{{ product[22] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B (g)</td>
+                            <td>{{ product[23] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin C (g)</td>
+                            <td>{{ product[24] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin D (g)</td>
+                            <td>{{ product[25] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin E (g)</td>
+                            <td>{{ product[26] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin K (g)</td>
+                            <td>{{ product[27] }}</td>
+                        </tr>
+                        <tr>
+                            <td>Other</td>
+                            <td>{{ product[28] }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+             
+               
+                
+              
+       
+    </div>
+
+    <script>
+        // Function to adjust the quantity
+        function adjustQuantity(event) {
+            const input = event.target.parentElement.querySelector('.quantity-input');
+            let currentValue = parseInt(input.value);
+            
+            // Check which button was clicked
+            if (event.target.classList.contains('plus')) {
+                currentValue += 1; // Increase quantity
+            } else if (event.target.classList.contains('minus') && currentValue > 1) {
+                currentValue -= 1; // Decrease quantity, ensuring it doesn't go below 1
+            }
+    
+            input.value = currentValue; // Update the input field
+        }
+    
+        // Add event listeners to all quantity buttons
+        document.querySelectorAll('.quantity-btn').forEach(button => {
+            button.addEventListener('click', adjustQuantity);
+        });
+    </script>
+    
+</body>
+</html>

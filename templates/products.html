@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style4.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="panel1">
+        <div class="nav">
+            <a href="{{ url_for('post_login_menu') }}"><div class="logo"></div></a>
+            <div class="search-bar">
+                <form method="POST" action="{{ url_for('search_product_by_name') }}">
+                    <input type="text" name="product_name" class="search" placeholder="Search for product" required>
+                </form>
+            </div>
+            <a href="{{ url_for('shopping_list') }}"><i class="fa-solid fa-cart-shopping" id="cart"></i></a>
+            <a href="{{ url_for('fav_list') }}"><i class="fa-solid fa-heart" id="wishlist"></i></a>
+            <a href="{{ url_for('view_profile') }}"><i class="fa-solid fa-user" id="user-profile"></i></a>
+        </div>
+        <div class="container">
+            <h1 style="text-align: center ; font-size: 60px;">All Products</h1>
+<h4 class="relative">The health classifications of products below are based on relative terms with each other</h4>
+            {% if healthy_products or average_products or unhealthy_products %}
+                <div class="product-grid">
+
+                    <!-- Healthy Products Section -->
+                    <h2 style="text-align: center; font-size: 40px; margin: 20px 0; color:green">Healthy Products</h2>
+                    {% if healthy_products %}
+                        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                            {% for product in healthy_products %}
+                                <div style="flex: 0 1 calc(50% - 20px); box-sizing: border-box; text-align: center; padding: 10px; border: 1px solid #ccc; border-radius: 10px;">
+                                    <img src="{{ url_for('static', filename='product_images/' + product['barcode_num'] + '.jpg') }}" 
+                                         alt="{{ product['product_name'] }}" 
+                                         style="display: block; margin: 0 auto; max-width: 200px; height: auto;">
+                                    <p>
+                                        <a href="{{ url_for('product_info', product_id=product['id']) }}" class="name">
+                                            {{ product['product_name'] }}
+                                        </a>
+                                    </p>
+                                    <p><strong>Nutrition Grade:</strong> {{ product['nutrition_grade'] }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p style="text-align: center;">No Healthy Products Found</p>
+                    {% endif %}
+
+                    <!-- Average Products Section -->
+                    <h2 style="text-align: center; font-size: 40px; margin: 20px 0; color: orange;">Average Products</h2>
+                    {% if average_products %}
+                        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                            {% for product in average_products %}
+                                <div style="flex: 0 1 calc(50% - 20px); box-sizing: border-box; text-align: center; padding: 10px; border: 1px solid #ccc; border-radius: 10px;">
+                                    <img src="{{ url_for('static', filename='product_images/' + product['barcode_num'] + '.jpg') }}" 
+                                         alt="{{ product['product_name'] }}" 
+                                         style="display: block; margin: 0 auto; max-width: 200px; height: auto;">
+                                    <p>
+                                        <a href="{{ url_for('product_info', product_id=product['id']) }}" class="name">
+                                            {{ product['product_name'] }}
+                                        </a>
+                                    </p>
+                                    <p><strong>Nutrition Grade:</strong> {{ product['nutrition_grade'] }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p style="text-align: center;">No Average Products Found</p>
+                    {% endif %}
+
+                    <!-- Unhealthy Products Section -->
+                    <h2 style="text-align: center; font-size: 40px; margin: 20px 0; color: red;">Unhealthy Products</h2>
+                    {% if unhealthy_products %}
+                        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                            {% for product in unhealthy_products %}
+                                <div style="flex: 0 1 calc(50% - 20px); box-sizing: border-box; text-align: center; padding: 10px; border: 1px solid #ccc; border-radius: 10px;">
+                                    <img src="{{ url_for('static', filename='product_images/' + product['barcode_num'] + '.jpg') }}" 
+                                         alt="{{ product['product_name'] }}" 
+                                         style="display: block; margin: 0 auto; max-width: 200px; height: auto;">
+                                    <p>
+                                        <a href="{{ url_for('product_info', product_id=product['id']) }}" class="name">
+                                            {{ product['product_name'] }}
+                                        </a>
+                                    </p>
+                                    <p><strong>Nutrition Grade:</strong> {{ product['nutrition_grade'] }}</p>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <p style="text-align: center;">No Unhealthy Products Found</p>
+                    {% endif %}
+                </div>
+            {% else %}
+                <p style="text-align: center;">No Products Found</p>
+            {% endif %}
+        </div>
+
+        <div class="panel4">
+            <div class="logo1"></div>
+            <div class="information">
+                <p class="header">Information</p>
+                <a href="{{ url_for('about_us') }}"><p class="item">About Us</p></a>
+            </div>
+            <div class="My_Account">
+                <p class="header">Contact Us:</p>
+                <p class="item">goneenterprisesinc@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

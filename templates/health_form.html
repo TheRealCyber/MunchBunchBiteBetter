@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style19.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo"></div>
+        <h1>HEALTH FORM</h1>
+       </div>
+    <div class="container">
+        
+        <form method="POST" action="{{ url_for('health_form', username=username) }}">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required><br>
+
+            <label for="height">Height (in cm):</label>
+            <input type="number" id="height" name="height" step="0.01" required><br>
+
+            <label for="weight">Weight (in kg):</label>
+            <input type="number" id="weight" name="weight" step="0.01" required><br>
+
+            <label for="diet_type">Select your diet type:</label><br>
+            <select id="diet_type" name="diet_type" required>
+                <option value="" disabled selected>Select your diet type</option>
+                <option value="Eggetarian">Eggetarian</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Non-vegetarian">Non-vegetarian</option>
+                <option value="Jain">Jain</option>
+            </select><br>
+
+            <label>Chronic Illnesses:</label><br>
+            <div class="checkbox-container">
+                <input type="checkbox" name="chronic_illnesses" value="Diabetes"> Diabetes<br>
+                <input type="checkbox" name="chronic_illnesses" value="Obesity"> Obesity<br>
+                <input type="checkbox" name="chronic_illnesses" value="High blood pressure"> High blood pressure<br>
+                <input type="checkbox" name="chronic_illnesses" value="Heart diseases"> Heart diseases<br>
+                <input type="checkbox" name="chronic_illnesses" value="Lactose intolerance/food allergies"> Lactose intolerance/food allergies<br>
+                <input type="checkbox" name="chronic_illnesses" value="None"> None<br>
+            </div>
+
+            <label for="dietary_restrictions">Which of the following specific dietary restrictions do you adhere to?(low-sugar, low-fat, low-salt, gluten-free, anti-inflammatory, protein-rich)</label><br>
+            <input type="text" id="dietary_restrictions" name="dietary_restrictions"><br>
+
+            <label for="trigger_ingredients">Are there specific ingredients that trigger your condition(s) or cause discomfort?(e.g., Sugar, Fats, Salt, Lactose, Wheat):</label><br>
+            <input type="text" id="trigger_ingredients" name="trigger_ingredients"><br>
+
+            <label>Select your health goals:</label><br>
+            <div class="checkbox-container">
+                <input type="checkbox" name="health_goals" value="Blood sugar control"> Blood sugar control<br>
+                <input type="checkbox" name="health_goals" value="Weight maintenance"> Weight maintenance<br>
+                <input type="checkbox" name="health_goals" value="Manage cholesterol"> Manage cholesterol<br>
+                <input type="checkbox" name="health_goals" value="Blood pressure control"> Blood pressure control<br>
+                <input type="checkbox" name="health_goals" value="Control symptoms of your chronic illness"> Control symptoms of your chronic illness<br>
+                <input type="checkbox" name="health_goals" value="Bodybuilding"> Bodybuilding<br>
+                <input type="checkbox" name="health_goals" value="None"> None<br>
+            </div>
+
+            <button type="submit">Submit Health Data</button>
+        </form>
+    </div>
+    <div class="panel4">
+        <div class="logo1"></div>
+        <div class="information">
+            <p class="header">Information</p>
+            <a href="{{ url_for('about_us') }}"><p class="item">About Us</p></a>
+        </div>
+        <div class="My_Account">
+            <p class="header">Contact Us:</p>
+            <p class="item">goneenterprisesinc@gmail.com</p>
+            
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* Reset default browser styles */
+* {
+   
+    margin: 0;
+    padding: 0;
+}
+
+body{
+font-family: 'Baloo Da 2';
+}
+
+
+/* Container Styles */
+.container {
+    background: white; /* White background for the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 40px; /* Increased padding around the container */
+    width: 100%; /* Full width for small screens */
+    max-width: 700px; /* Limit width for larger screens */
+    margin: 50px auto; /* Center the container */
+    
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #28a745; /* Green color for the heading */
+    font-size: 3em; /* Increased font size for heading */
+}
+
+/* Form Styles */
+.form {
+    background-color: #f8f9fa; /* Light gray background for the form */
+    border: 1px solid #ccc; /* Light border around the form */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the form */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for the form */
+    margin-bottom: 30px; /* Space below the form */
+}
+
+/* Label Styles */
+label {
+    display: block; /* Make label a block element */
+    margin-bottom: 8px; /* Space below the label */
+    font-weight: bold; /* Bold font for labels */
+}
+
+/* Input and Select Styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 20px; /* Space below inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Input Focus Styles */
+input:focus,
+select:focus {
+    border-color: #28a745; /* Green border on focus */
+    outline: none; /* Remove outline */
+}
+
+/* Submit Button Styles */
+input[type="submit"] {
+    background-color: #28a745; /* Green background for submit button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 12px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.5em; /* Increased font size for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+}
+
+/* Submit Button Hover Effects */
+input[type="submit"]:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Small Heading Styles */
+h2 {
+    margin: 20px 0; /* Space above and below the subheading */
+    color: #28a745; /* Green color for the subheading */
+    font-size: 2em; /* Increased font size for subheading */
+}
+

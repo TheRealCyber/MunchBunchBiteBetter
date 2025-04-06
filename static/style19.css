@@ -1,0 +1,204 @@
+body {
+    font-family: 'Baloo Da 2';
+    background-color:white;
+    margin: 0;
+    padding: 0;
+    background-image: url("{{ url_for('static', filename='OIG4.png') }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 25px;
+}
+
+
+.container {
+    width: 80%;
+    max-width: 600px;
+   margin: 10px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-top: -150px;
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 25px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+a {
+    color: #5cb85c;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'Baloo Da 2';
+}
+
+a:hover {
+    text-decoration: underline;
+}
+input[type="checkbox"] {
+    margin-right: 10px; 
+    vertical-align: middle; 
+}
+.checkbox-container {
+    display: block;
+    margin-top: 5px;
+}
+
+/* Submit Button Styles */
+input[type="submit"] {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text color */
+    padding: 14px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    font-size: 1em; /* Regular font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    width: 100%; /* Full width for button */
+}
+
+.nav{
+    height:170px;
+    width:100%;
+    background-color:green;
+  
+   
+ }
+
+
+ 
+
+.logo{
+background-image: url('/static/logo1.png');
+background-size: cover;
+background-repeat: no-repeat;
+width: 200px;
+height:200px;
+margin-top:0px;
+margin-left:-20px;
+
+transform: scale(0.8,0.8);
+}
+
+
+
+
+
+.empty{
+    text-align: center;
+}
+
+.panel4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#f4f4f4;
+    height: 330px;
+}
+
+.header{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.information{
+margin-left: 825px;
+
+}
+
+.My_Account{
+    margin-left:450px;
+}
+
+.item{
+    font-size: 35px;
+}
+
+#cart, #wishlist, #user-profile{
+    position: relative;
+    top: -30px; 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    transform: scale(1.5, 1.5);
+}
+
+#cart {
+    margin-left: 1950px;
+}
+
+#wishlist {
+    margin-left: 35px;
+}
+
+#user-profile {
+    margin-left: 40px;
+}
+
+.search{
+    display:flex;
+    width:1470px;
+    height:50px;
+    border:none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
+    border-radius: 40px;
+    margin-top: -130px; 
+    margin-left: 215px;
+   font-family: 'Baloo Da 2';
+}
+
+.logo1{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -30px;
+    display: inline;
+    transform: scale(1.5,1.5);
+}
+a{
+    text-decoration: none;
+    color: black;
+}

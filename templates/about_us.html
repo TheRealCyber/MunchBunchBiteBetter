@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style20.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <a href="{{url_for('post_login_menu')}}"><div class="logo"></div></a>
+        <div class="search-bar">
+            <form method="POST" action="{{ url_for('search_product_by_name') }}">
+                <input type="text" name="product_name" class="search" placeholder="Search for product" required>
+            </form>
+            <a href="{{ url_for('shopping_list') }}"><i class="fa-solid fa-cart-shopping" style="color: #121212;" id="cart"></i></a>
+            <a href="{{ url_for('fav_list') }}"><i class="fa-solid fa-heart" style="color: #0d0d0d;" id="wishlist"></i></a>
+            <a href="{{ url_for('view_profile') }}"><i class="fa-solid fa-user" style="color: #050505;" id="user-profile"></i></a>
+        </div>
+    </div>
+        <h1>Our Team</h1>
+        <div class="pics">
+            <div class="box1">
+                <div class="image">
+                <p class="img1"></p>
+               <a href="https://www.linkedin.com/in/saloni-sivakumar/"> <p class="name1">Saloni Sivakumar</p></a>
+                <p class="inf">Saloni demonstrated strong leadership by fostering clear communication and ensuring all team members were aligned with the project goals and outcomes, she contributed significantly by integrating barcode scanning on laptops and pulling product information via an API to create a user-friendly shopping list database that includes added functionalities such as modifying shopping lists, adding product nutrition tags, and allergy tagging. She managed extensive database enhancements, adding user and quantity columns to shopping lists, and ensuring the lists are personalized through unique user profiles. In terms of machine learning, Saloni implemented SVM recommendations and K-means clustering for classifying products into categories like healthy and unhealthy, pre-processed survey data to apply these algorithms effectively, and linked product ingredients to Wikipedia for enhanced knowledge. Additionally, she offered design consultation to improve the front-end user experience, revised the health form to match the survey, and integrated the existing code with user input capabilities to enhance functionality.She efficiently managed the project Trello board and facilitated seamless collaboration between frontend and backend teams, while providing regular updates to our project mentor at each stage of the project's progression.</p>
+              </div>
+              
+              <div class="image">
+                <p class="img2"></p>
+               <a href="https://www.linkedin.com/in/aneeshmathur1/"><p class="name2">Aneesh Mathur</p></a>
+                <p class="inf">Aneesh significantly contributed to the project by integrating the admin interface with the main menu, adding a product information database and integrating it to replace the API. He also added questionnaire and product addition features, completed user profile features, and found products to add to the database. Additionally, Aneesh enabled barcode scanning on the phone and API data pulling, coded user profile and admin features, and pre-processed survey data for ML applications. He helped in pre-processing data for ML algorithms, gave design consultation to Mansa, and split the original dataset. Aneesh also added search functionality by name, filtering for product viewing, personalized product scoring, and linked deletion of user data with the user health form. He assisted Saloni in developing a k-means clustering algorithm to classify products as healthy, average, or unhealthy, reviewed the front-end design and suggested changes, and implemented the functionality to add products by entering a new barcode number, and automatically storing all the product information and image into the product database storage. He also developed a shopping list classifier that checks if the user's recommended products are safe for them to consume or unhealthy based on their shopping list, and also maintained the daily reports of each day, and managed and updated the GitHub with the release structure and commits and merges onto the required branches.</p>
+              </div>
+            </div>
+            <div class="box2">
+                <div class="image">
+                    <p class="img3"></p>
+                   <a href="https://www.linkedin.com/in/mansa-mohanty-a5b998280/"> <p class="name3">Mansa Mohanty</p></a>
+                    <p class="inf">Mansa made extensive contributions to the project, leading the development of critical front-end components such as the login/register pages, admin interface, questionnaire, home, search, product, user profile, and view products pages. She integrated key features like the shopping list and favorite list, adding nutritional summaries to enhance user engagement and ease of use. Additionally, Mansa developed the About Us and Recommendations pages, incorporated a product scan option for easy barcode-based product lookup, and implemented a dark-mode feature to improve accessibility for users, particularly those with visual impairments. Her deep research into Nutri-Score and nutrition tags allowed her to curate a well-organized product database, improving the relevance and accuracy of the recommendations system. She ensured a smooth and intuitive user experience across all pages and functionalities, balancing both design and usability aspects, making the platform both functional and visually appealing.</p>
+                  </div>
+                  
+                  <div class="image">
+                    <p class="img4"></p>
+                   <a href="https://www.linkedin.com/in/prarthana-subudhi-266b26271/"> <p class="name4">Prarthana Subudhi</p></a>
+                    <p class="inf">Prarthana contributed significantly by coding the questionnaire page and conducting in-depth research on Nutri-Score, nutrition tags, and nutrient needs for different health goals. Her research ensured that the recommendations provided to users were accurate, personalized, and aligned with their health objectives. Prarthana was instrumental in designing the UI/UX for key pages such as the login/register pages, home, search, and product pages, focusing on creating intuitive, user-friendly layouts that enhanced the overall user experience. She applied machine learning techniques, including health score prediction algorithms, which added an intelligent layer to the recommendation engine and allowed for better product classification. Prarthana also explored innovative website designs, pushing the platform’s aesthetic appeal, and curated a comprehensive list of products, ensuring a diverse range of healthy options were available. Through her contributions, she enriched the platform with personalized features, a deeper understanding of nutrition, and a more engaging user interface.
+                    </p>
+                  </div>
+            </div>
+
+        </div>
+        <h1>Our Journey</h1>
+    <p class="journey">Our journey began as a group of computer science and business systems students at NMIMS, united by a shared passion for technology and health. As we delved into our studies, we recognized a gap in the market: a lack of accessible, personalized tools to help individuals make better food choices. Inspired by the growing need for health-conscious solutions, we set out to create an app that could bridge this gap.
+
+        From brainstorming ideas to developing our app, we focused on building a platform that combines technology, user-centric design, and nutrition science. We wanted to empower people—especially those with specific health goals, like pregnant women, new mothers, or those with allergies—to make smarter, informed decisions about their food. Our app uses AI to analyze food products and offer tailored recommendations, making it easier for users to understand how each product fits into their lifestyle.
+        
+        Through countless hours of coding, testing, and refining, we’ve built BiteBetter to be a reliable, easy-to-use health companion. Today, we’re proud to see our vision come to life, and we remain committed to continuously improving our platform to help more people lead healthier, happier lives.</p>
+    </div>
+       
+    <div class="panel4">
+        <div class="logo1"></div>
+        <div class="information">
+            <p class="header">Information</p>
+            <a href="{{ url_for('about_us') }}"><p class="item">About Us</p></a>
+        </div>
+        <div class="My_Account">
+            <p class="header">Contact Us:</p>
+            <p class="item">goneenterprisesinc@gmail.com</p>
+            
+        </div>
+    </div>
+</body>
+</html>

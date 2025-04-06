@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Summary - Favourite List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Include Chart.js -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Baloo Da 2';
+            background-color: #f8f9fa; /* Light background color */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #fff; /* White background for the container */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+        }
+        h1 {
+            text-align: center;
+            color: #343a40; /* Dark text for the title */
+            font-size: 2.5em; /* Increased font size for the title */
+        }
+        .nutrition-info {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #dee2e6; /* Border for the info box */
+            border-radius: 8px;
+            background: #e9ecef; /* Light grey background for info */
+            font-size: 1.5em; /* Increased font size for nutrition info */
+        }
+        canvas {
+            margin: 20px auto; /* Center canvas */
+            display: block; /* Center block element */
+            max-width: 100%; /* Responsive canvas */
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            text-decoration: none;
+            color: white; /* White color for the back link */
+            background-color:  #5cb85c; /* Blue background for the back link */
+            padding: 10px 15px; /* Padding for the back link button */
+            border-radius: 5px; /* Rounded corners for the button */
+            transition: background-color 0.3s; /* Transition for hover effect */
+            font-size: 1.2em; /* Increased font size for the back link */
+        }
+        .back-link:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nutrition Summary of Favourite List</h1>
+        <div class="nutrition-info">
+            <p><strong>Total Carbohydrates:</strong> {{ total_carbohydrates }} g</p>
+            <p><strong>Total Proteins:</strong> {{ total_proteins }} g</p>
+            <p><strong>Total Sugars:</strong> {{ total_sugars }} g</p>
+            <p><strong>Total Fat:</strong> {{ total_fat }} g</p>
+            <p><strong>Total Sodium:</strong> {{ total_sodium }} g</p>
+        </div>
+
+        <!-- Bar chart for nutritional values -->
+        <canvas id="nutritionChart" width="400" height="200"></canvas>
+
+        <!-- Pie chart for percentage of nutrients -->
+        <canvas id="pieChart" width="400" height="200"></canvas>
+
+        <a href="{{ url_for('fav_list') }}" class="back-link">Back to Favourite List</a>
+    </div>
+
+    <script>
+        // Prepare the data for the bar chart
+        const labels = ['Carbohydrates', 'Proteins', 'Sugars', 'Fat', 'Sodium'];
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Nutritional Values (g)',
+                data: [
+                    {{ total_carbohydrates }},
+                    {{ total_proteins }},
+                    {{ total_sugars }},
+                    {{ total_fat }},
+                    {{ total_sodium }}
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const configBar = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 16 // Increased font size for legend
+                            }
+                        }
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Grams (g)', // Y-axis label
+                            font: {
+                                size: 16 // Increased font size for Y-axis label
+                            }
+                        },
+                        ticks: {
+                            font: {
+                                size: 14 // Font size for Y-axis ticks
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const nutritionChart = new Chart(
+            document.getElementById('nutritionChart'),
+            configBar
+        );
+
+        // Prepare data for the pie chart (example values, adjust as needed)
+        const pieData = {
+            labels: labels,
+            datasets: [{
+                label: 'Percentage of Nutrients',
+                data: [
+                    {{ total_carbohydrates }},
+                    {{ total_proteins }},
+                    {{ total_sugars }},
+                    {{ total_fat }},
+                    {{ total_sodium }}
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)'
+                ]
+            }]
+        };
+
+        const configPie = {
+            type: 'pie',
+            data: pieData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 16 // Increased font size for legend
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const pieChart = new Chart(
+            document.getElementById('pieChart'),
+            configPie
+        );
+    </script>
+</body>
+</html>

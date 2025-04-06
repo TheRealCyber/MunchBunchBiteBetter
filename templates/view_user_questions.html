@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style13.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="nav">
+        <a href="{{url_for('post_login_menu')}}"><div class="logo"></div></a>
+        <div class="search-bar">
+            <form method="POST" action="{{ url_for('search_product_by_name') }}">
+                <input type="text" name="product_name" class="search" placeholder="Search for product" required>
+            </form>
+            <a href="{{ url_for('shopping_list') }}"><i class="fa-solid fa-cart-shopping" style="color: #121212;" id="cart"></i></a>
+            <a href="{{ url_for('fav_list') }}"><i class="fa-solid fa-heart" style="color: #0d0d0d;" id="wishlist"></i></a>
+            <a href="{{ url_for('view_profile') }}"><i class="fa-solid fa-user" style="color: #050505;" id="user-profile"></i></a>
+        </div>
+    <div class="container">
+        <h1>User Profile Questions & Answers</h1>
+        <div class="profile-card">
+            <ul class="profile-list">
+                <li><strong>Username:</strong> {{ data[1] }}</li>
+                <li><strong>Age:</strong> {{ data[2] }}</li>
+                <li><strong>Height:</strong> {{ data[3] }} cm</li>
+                <li><strong>Weight:</strong> {{ data[4] }} kg</li>
+                <li><strong>Diet Type:</strong> {{ data[5] }}</li>
+                <li><strong>Chronic Illnesses:</strong> {{ data[6] }}</li>
+                <li><strong>Dietary Restrictions:</strong> {{ data[7] }}</li>
+                <li><strong>Trigger Ingredients:</strong> {{ data[8] }}</li>
+                <li><strong>Health Goals:</strong> {{ data[9] }}</li>
+            </ul>
+        </div>
+        <a class="edit-link" href="{{ url_for('edit_user_questions') }}">Edit Profile Questions</a>
+    </div>
+</body>
+</html>

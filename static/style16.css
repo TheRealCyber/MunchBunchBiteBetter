@@ -1,0 +1,278 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    font-family:'Baloo Da 2';
+    background-color:white;
+    color: #333;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1500px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Product List */
+.product-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Product Item */
+.product-item {
+    width: 300px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fafafa;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 15px;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Product Image */
+.product-image {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Product Details */
+.product-details {
+    padding: 10px;
+    
+}
+
+.product-details strong {
+    font-size: 1.1em;
+    
+}
+
+.product-details em {
+   
+    font-style: normal;
+    display: block;
+    margin-top: 8px;
+    font-size: 25px;
+}
+
+.name{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+.nav{
+    height:170px;
+    width:100%;
+    background-color:green;
+    margin-bottom: 200px;
+   
+ }
+
+
+ .search::placeholder{
+    padding: 12px;
+    font-size: 25px;
+    font-family: 'Baloo Da 2';
+    border: none;
+    font-weight: 700;
+}
+
+    
+input:focus {
+outline: none;
+}
+
+.logo{
+background-image: url('/static/logo1.png');
+background-size: cover;
+background-repeat: no-repeat;
+width: 200px;
+height:200px;
+margin-top:0px;
+margin-left:-20px;
+
+transform: scale(0.8,0.8);
+}
+
+
+#cart:hover{
+transform: scale(1.7,1.7);
+}
+
+#wishlist:hover{
+transform: scale(1.7,1.7);
+}
+
+#user-profile:hover{
+transform: scale(1.7,1.7);
+}
+
+strong{
+font-size:30px;
+}
+
+.name{
+font-size: 30px;
+}
+
+p{
+font-size: 30px;
+}
+
+#cart, #wishlist, #user-profile{
+position: relative;
+top: -30px; 
+display: inline-block;
+height: 50px;
+width: 50px;
+transform: scale(1.5, 1.5);
+}
+
+#cart {
+margin-left: 1950px;
+}
+
+#wishlist {
+margin-left: 35px;
+}
+
+#user-profile {
+margin-left: 40px;
+}
+
+.search{
+display:flex;
+width:1470px;
+height:50px;
+border:none;
+border-top-left-radius: 40px;
+border-bottom-left-radius:40px;
+border-radius: 40px;
+margin-top: -130px; 
+margin-left: 215px;
+
+} 
+
+.empty{
+    text-align: center;
+}
+
+.logo1{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -30px;
+    display: inline;
+    transform: scale(1.5,1.5);
+}
+
+.panel4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    height: 301px;
+}
+
+.header{
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.information{
+margin-left: 825px;
+
+}
+
+.My_Account{
+    margin-left:450px;
+}
+
+.item{
+    font-size: 35px;
+}
+
+#cart, #wishlist, #user-profile{
+    position: relative;
+    top: -30px; 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    transform: scale(1.5, 1.5);
+}
+
+#cart {
+    margin-left: 1950px;
+}
+
+#wishlist {
+    margin-left: 35px;
+}
+
+#user-profile {
+    margin-left: 40px;
+}
+
+.search{
+    display:flex;
+    width:1470px;
+    height:50px;
+    border:none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
+    border-radius: 40px;
+    margin-top: -130px; 
+    margin-left: 215px;
+   font-family: 'Baloo Da 2';
+}
+
+.logo1{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -30px;
+    display: inline;
+    transform: scale(1.5,1.5);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

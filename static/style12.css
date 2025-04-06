@@ -1,0 +1,239 @@
+
+* {
+   
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Baloo Da 2'; /* Clean sans-serif font */
+    background-color: white; /* Light background color */
+    color: #333; /* Dark text color for readability */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    
+}
+
+/* Container Styles */
+.container {
+    background: white; /* White background for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    padding: 50px; /* Increased padding around the container */
+    width: 100%; /* Full width for small screens */
+    max-width: 500px; /* Limit container width for larger screens */
+    transition: box-shadow 0.3s, transform 0.3s; /* Smooth transition for shadow and transform */
+    margin-left: 850px;
+    margin-top: 120px;
+}
+
+/* Container Hover Effect */
+.container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center; /* Center the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #28a745; /* Green color for the heading */
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 20px; /* Space between form groups */
+}
+
+/* Label Styles */
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold labels for emphasis */
+}
+
+/* Input Styles */
+input[type="password"] {
+    width: 100%; /* Full width for inputs */
+    padding: 12px; /* Padding for inputs */
+    border: 2px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners for inputs */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition for border color and shadow */
+}
+
+/* Input Focus Styles */
+input[type="password"]:focus {
+    border-color: #28a745; /* Green border on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Light green shadow on focus */
+}
+
+/* Submit Button Styles */
+input[type="submit"] {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text color */
+    padding: 14px; /* Padding for button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    font-size: 1em; /* Regular font size for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    width: 100%; /* Full width for button */
+}
+
+
+input[type="submit"]:hover {
+    background-color: #218838; 
+    transform: translateY(-2px); 
+}
+
+/* Message Styles */
+.messages {
+    margin-top: 20px; /* Space above messages */
+    list-style-type: none; /* Remove default list style */
+}
+
+.messages li {
+    padding: 10px; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+    color: #fff; 
+}
+
+.messages .error {
+    background-color: #dc3545; 
+}
+
+.messages .success {
+    background-color: #28a745; 
+}
+
+.logo{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top:0px;
+    margin-left:-20px;
+    
+    transform: scale(0.8,0.8);
+}
+
+.nav{
+    height:170px;
+    width:100%;
+    background-color:green;
+   
+ }
+
+
+ .search::placeholder{
+    padding: 12px;
+    font-size: 25px;
+    font-family: 'Baloo Da 2';
+    border: none;
+    font-weight: 700;
+}
+
+    
+input:focus {
+outline: none;
+}
+
+
+.search{
+    display:flex;
+    width:1470px;
+    height:50px;
+    border:none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
+    border-radius: 40px;
+    margin-top: -130px; 
+    margin-left: 215px;
+   
+}
+
+.s-icon{
+    background-color:white;
+    color:black;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius:40px;
+    width:45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1470px;
+    height:52px;
+
+}
+
+#cart, #wishlist, #user-profile{
+    position: relative;
+    top: -30px; 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    transform: scale(1.5, 1.5);
+}
+
+#cart {
+    margin-left: 1950px;
+}
+
+#wishlist {
+    margin-left: 35px;
+}
+
+#user-profile {
+    margin-left: 40px;
+}
+
+.logo1{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top: 20px;
+    margin-left: -30px;
+    display: inline;
+    transform: scale(1.5,1.5);
+}
+
+
+
+.header{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.information{
+margin-left: 825px;
+margin-bottom: 5px;
+
+
+}
+
+.My_Account{
+    margin-left:450px;
+}
+
+.item{
+    font-size: 30px;
+}
+
+.panel4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    height: 302px;
+  
+    margin-top: 200px;
+   
+    width: 100%;
+}

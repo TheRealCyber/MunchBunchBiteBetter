@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Scan Barcode</title>
+    <style>
+
+.nav{
+        height:170px;
+        width:100%;
+        background-color:green;
+        margin-bottom: 200px;
+       
+     }
+    
+
+     .search::placeholder{
+        padding: 12px;
+        font-size: 25px;
+        font-family: 'Baloo Da 2';
+        border: none;
+        font-weight: 700;
+    }
+
+        
+input:focus {
+    outline: none;
+}
+
+.logo{
+    background-image: url('/static/logo1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height:200px;
+    margin-top:0px;
+    margin-left:-20px;
+   
+    transform: scale(0.8,0.8);
+}
+
+
+#cart:hover{
+    transform: scale(1.7,1.7);
+}
+
+#wishlist:hover{
+    transform: scale(1.7,1.7);
+}
+
+#user-profile:hover{
+    transform: scale(1.7,1.7);
+}
+
+strong{
+    font-size:30px;
+}
+
+.name{
+    font-size: 30px;
+}
+
+p{
+    font-size: 30px;
+}
+
+#cart, #wishlist, #user-profile{
+    position: relative;
+    top: -30px; 
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    transform: scale(1.5, 1.5);
+}
+
+#cart {
+    margin-left: 1950px;
+}
+
+#wishlist {
+    margin-left: 35px;
+}
+
+#user-profile {
+    margin-left: 40px;
+}
+
+.search{
+    display:flex;
+    width:1470px;
+    height:50px;
+    border:none;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius:40px;
+    border-radius: 40px;
+    margin-top: -130px; 
+    margin-left: 215px;
+   
+}
+        .logo1 {
+            background-image: url('/static/logo1.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            margin-left: -30px;
+            display: inline;
+            transform: scale(1.5, 1.5);
+        }
+
+        .panel4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+            height: 302px;
+           
+            margin-top: 200px;
+           
+            width: 100%;
+        }
+
+        .header {
+            font-size: 48px;
+            font-weight: 600;
+        }
+
+        .information {
+            margin-left: 825px;
+        }
+
+        .My_Account {
+            margin-left: 450px;
+        }
+
+        .item {
+            font-size: 35px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color:white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        .scan-box {
+            width: 90%;
+            max-width: 500px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-left: 6px solid #4CAF50;
+            text-align: center;
+          
+           
+        }
+        .steps{
+            text-align: justify;
+        }
+
+        a{
+        text-decoration: none;
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="{{url_for('post_login_menu')}}"><div class="logo"></div></a>
+        <div class="search-bar">
+            <form method="POST" action="{{ url_for('search_product_by_name') }}">
+                <input type="text" name="product_name" class="search" placeholder="Search for product" required>
+            </form>
+            <a href="{{ url_for('shopping_list') }}"><i class="fa-solid fa-cart-shopping" style="color: #121212;" id="cart"></i></a>
+            <a href="{{ url_for('fav_list') }}"><i class="fa-solid fa-heart" style="color: #0d0d0d;" id="wishlist"></i></a>
+            <a href="{{ url_for('view_profile') }}"><i class="fa-solid fa-user" style="color: #050505;" id="user-profile"></i></a>
+        </div>
+  
+      
+    </div>
+    <div class="scan-box">
+        <h1 style="font-size: 1.8em; color: #2c3e50; margin-bottom: 15px;">Scan Product Barcode</h1>
+        <p style="color: #555; font-size: 1em; margin: 15px 0 25px; line-height: 1.5;" class="steps">1. Download the IP Webcam app from the Play Store.<br>
+            2. Navigate to Service Control and tap Start Server.<br>
+            3. At the bottom of the screen, note down the address (up to 137:8080).<br>
+            4. Make sure:<br>
+            You are in a well-lit room.<br>
+            Your phone's camera is properly aligned with the product's barcode.<br>
+            Hold your phone steady until the barcode is successfully scanned.<br>
+            Ensure that both your phone and the device are connected to the same network.<br></p>
+        <form method="POST" action="/scan_barcode">
+            <label for="ip_address" style="font-weight: bold; color: #2c3e50; display: block; margin-bottom: 8px; text-align: left;">IP Address:</label>
+            <input type="text" id="ip_address" name="ip_address" placeholder="e.g., 192.168.1.100" required
+                   style="width: 100%; padding: 12px; margin: 10px 0 20px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; color: #333; box-sizing: border-box;">
+            <button type="submit" style="background-color: #4CAF50; color: white; padding: 12px 25px; border: none; border-radius: 6px; font-size: 1em; cursor: pointer; text-decoration: none; display: inline-block; transition: background-color 0.3s ease;">
+                Start Scanning
+            </button>
+        </form>
+    </div>
+
+    <div class="panel4">
+        <div class="logo1"></div>
+        <div class="information">
+            <p class="header">Information</p>
+            <a href="{{ url_for('about_us') }}"><p class="item">About Us</p></a>
+        </div>
+        <div class="My_Account">
+            <p class="header">Contact Us:</p>
+            <p class="item">goneenterprisesinc@gmail.com</p>
+            
+        </div>
+    </div>
+    
+</body>
+</html>

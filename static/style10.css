@@ -1,0 +1,72 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f0f4f8; 
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.95); 
+    padding: 30px;
+    border-radius: 15px; 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2.5em; 
+}
+
+.nutrition-info {
+    background: #e8f5e9; 
+    border-left: 5px solid #4caf50; 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nutrition-info p {
+    margin: 12px 0;
+    color: #555;
+    font-size: 1.2em; 
+}
+
+.nutrition-info strong {
+    color: #4caf50; 
+    font-weight: bold; 
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background-color: #5cb85c; 
+    color: white;
+    border-radius: 8px; 
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.1em; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.back-link:hover {
+    background-color: #4cae4c;
+    text-decoration: underline;
+    transform: translateY(-2px); 
+}

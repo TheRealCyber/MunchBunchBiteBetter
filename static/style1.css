@@ -1,0 +1,212 @@
+
+body {
+    font-family: Arial, sans-serif;
+    
+    margin: 0;
+    padding: 0;
+    
+    background-image: url('/static/hero.png');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(10px); 
+    width: 450px;
+    height: 500px;
+    padding: 2rem;
+     margin-top: 200px;
+    border-radius: 15px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+       /* Animation */
+       opacity: 0;
+       transform: translateY(50px);
+       animation: fadeInUp 1.2s ease-out forwards;
+    
+}
+
+.container1 {
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(10px); 
+    width: 450px;
+    height: 550px;
+    padding: 2rem;
+     margin-top: 200px;
+    border-radius: 15px;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+    
+       opacity: 0;
+       transform: translateY(50px);
+       animation: fadeInUp 1.2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Starts below the screen */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Moves to its final position */
+    }
+}
+
+
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    color:black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select {
+    padding: 10px;
+    margin-top: 2px;
+     border: none;
+   
+    font-size: 20px;
+    font-style: bold;
+    color:black;
+    background-color:transparent;
+
+}
+
+button {
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4cae4c;
+}
+
+a {
+    color: #225522;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px; 
+    vertical-align: middle; 
+}
+
+.checkbox-container {
+    display: block;
+    margin-top: 5px;
+}
+
+.input-group{
+    display: flex;
+    padding: 10px;
+    margin-top: 2px;
+    border: none;
+    border-bottom: 2px solid black;
+    font-size: 20px;
+    font-style: bold;
+    color:black;
+   
+}
+
+#icon{
+    margin-top: 15px;
+    margin-left: 163px;
+}
+
+::placeholder{
+    border: none;
+    color: black;
+    background-color: transparent;
+    font-size: 22px;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+#h1{
+    margin-top: 13px;
+}
+
+.link{
+    margin-top: 25px;
+}
+
+#username{
+    margin-left:-18px;
+    background-color: transparent;
+   
+}
+
+#password{
+    margin-left:-18px;
+}
+
+#email{
+    margin-left:-18px;
+}
+
+#phone{
+    margin-left:-18px;
+}
+
+p{
+    font-size: 22px;
+}
+
+/* Flash Message Styling */
+.alert-success {
+    color: green;
+    padding: 15px; /* Increase padding for better visibility */
+    margin: 0; /* Remove margin from other sides to keep it fixed at top */
+    border: 1px solid green;
+    border-radius: 5px;
+    background-color: #f0f9f0;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem; /* Adjust font size for better readability */
+    text-align: center; /* Center align the message */
+    position: fixed; /* Fixed position at the top of the page */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it appears above other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow for better visibility */
+}
+
+.alert {
+    font-family: Arial, sans-serif;
+}
+

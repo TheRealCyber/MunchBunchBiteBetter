@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Ingredients and Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style7.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <style>
+       body{
+        font-family: 'Baloo Da 2';
+       }
+        h1 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap:wrap;
+            flex-direction: column;
+           
+        }
+        li {
+           
+            margin: 10px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .ingredients {
+            
+            color: black;
+           font-size: 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            font-family: 'Baloo Da 2';
+            transform: scale(1.4, 1.4);
+            margin-left: 20px;
+            /* margin-bottom: 50px; */
+            /* margin-right: 75px; */
+        }
+        /* Grid layout for products */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two products per row */
+            gap: 20px; /* Spacing between products */
+          
+        }
+        .product-item {
+           
+            padding: 20px;
+            border-radius: 10px;
+          
+            text-align: center;
+           
+        }
+        .product-image img {
+            width: 100%; /* Responsive image */
+            height: auto;
+            max-width: 500px; /* Set a max width for the product images */
+        }
+        .product-name {
+            margin-top: 10px;
+            font-size: 40px;
+            font-weight: bold;
+            color: #333;
+        }
+        .nutrition-grade {
+            margin-top: 5px;
+            font-size: 25px;
+            color: black;
+        }
+
+        .ing{
+            display: flex;
+            flex-direction: row;
+           
+        }
+
+    </style>
+</head>
+<body>
+   
+        <div class="nav">
+            <a href="{{url_for('post_login_menu')}}"><div class="logo"></div></a>
+            <div class="search-bar">
+                <form method="POST" action="{{ url_for('search_product_by_name') }}">
+                    <input type="text" name="product_name" class="search" placeholder="Search for product" required>
+                </form>
+                <a href="{{ url_for('shopping_list') }}"><i class="fa-solid fa-cart-shopping" style="color: #121212;" id="cart"></i></a>
+                <a href="{{ url_for('fav_list') }}"><i class="fa-solid fa-heart" style="color: #0d0d0d;" id="wishlist"></i></a>
+                <a href="{{ url_for('view_profile') }}"><i class="fa-solid fa-user" style="color: #050505;" id="user-profile"></i></a>
+            </div>
+      
+          
+        </div>
+<div class="container">
+    <h1>Recommended Healthy Alternatives/Ingredients</h1>
+
+    {% if recommendations %}
+        <ul>
+            {% for recommendation in recommendations %}
+            <div class="ing">
+            <img src="{{ url_for('static', filename='images/' + recommendation.lower().replace(' ', '_') + '.png') }}" clas="ingg"
+            alt="{{ ingredient }}" >
+              <li class="ingredients">{{ recommendation }}</li>
+            </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No ingredient recommendations found based on your input.</p>
+    {% endif %}
+
+    <h1>Recommended Products</h1>
+
+    {% if recommended_products %}
+        <div class="product-grid">
+            {% for product in recommended_products %}
+                <div class="product-item">
+                    <div class="product-image">
+                        {% if product['barcode_num'] %}
+                        <img src="{{ url_for('static', filename='product_images/' + product['barcode_num'] + '.jpg') }}">
+                            
+                        {% else %}
+                            <p>No image available for this product.</p>
+                        {% endif %}
+                    </div>
+                    <a href="{{ url_for('product_info', product_id=product['id']) }}" class="name">
+                        <div class="product-name">{{ product['product_name'] }}</div>
+                    </a>
+                    
+                    <div class="nutrition-grade">Nutritional Grade: {{ product.nutrition_grade }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No product recommendations found based on your input.</p>
+    {% endif %}
+    </div>
+
+
+    <div class="panel4">
+        <div class="logo1"></div>
+        <div class="information">
+            <p class="header">Information</p>
+            <a href="{{ url_for('about_us') }}"><p class="item">About Us</p></a>
+        </div>
+        <div class="My_Account">
+            <p class="header">Contact Us:</p>
+            <p class="item">goneenterprisesinc@gmail.com</p>
+            
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style11.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Profile Menu for {{ username }}</h1>
+    </header>
+    <div class="container">
+    <nav>
+        <ul>
+            <li>
+                <div class="pass"></div>
+                <a href="{{ url_for('change_password') }}"><p class="p">Change Password</p></a>
+                <a href="{{ url_for('change_password') }}" class="edit"></a>
+            </li>
+
+            <li>
+                <div class="email"></div>
+                <a href="{{ url_for('change_account_info') }}"><p class="p">Change Account Information</p></a>
+                <a href="{{ url_for('change_account_info') }}" class="edit1"></a>
+
+            </li>
+            <li>
+                <div class="healthform"></div>
+                <a href="{{ url_for('view_user_questions') }}"><p class="p">View Health Form</p></a>
+                <a href="{{ url_for('view_user_questions') }}" class="edit2"></a>
+            </li>
+
+            <li>
+                <div class="logout"></div>
+                <a href="{{ url_for('logout') }}"><p class="p">logout</p></a>
+                
+            </li>
+          
+          
+        </ul>
+    </nav>
+    <div class="container2">
+    <div class="profile"></div>
+    <p class="name">{{username}}</p>
+</div>
+</div>
+    <div class="panel4">
+        <div class="logo1"></div>
+        <div class="information">
+            <p class="header">Information</p>
+            <a href="{{ url_for('about_us') }}"><p class="item">About Us</p></a>
+        </div>
+        <div class="My_Account">
+            <p class="header">Contact Us:</p>
+            <p class="item">goneenterprisesinc@gmail.com</p>
+            
+        </div>
+    </div>
+
+
+
+</body>
+</html>

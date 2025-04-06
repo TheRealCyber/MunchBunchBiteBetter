@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">  <!-- Optional: Link to a CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Health Form for {{ username }}</h1>
+        <form method="POST" action="{{ url_for('another_health_form', username=username) }}">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required>
+
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+
+            <label for="diet_type">Dietary Type:</label>
+            <input type="text" id="diet_type" name="diet_type" required>
+
+            <label for="chronic_illnesses">Chronic Illnesses (comma-separated):</label>
+            <input type="text" id="chronic_illnesses" name="chronic_illnesses">
+
+            <label for="dietary_restrictions">Dietary Restrictions (comma-separated):</label>
+            <input type="text" id="dietary_restrictions" name="dietary_restrictions">
+
+            <label for="trigger_ingredients">Trigger Ingredients (comma-separated):</label>
+            <input type="text" id="trigger_ingredients" name="trigger_ingredients">
+
+            <label for="health_goals">Health Goals (comma-separated):</label>
+            <input type="text" id="health_goals" name="health_goals">
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

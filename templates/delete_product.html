@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Product</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style17.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Delete Product</h1>
+        <form action="{{ url_for('delete_product') }}" method="POST">
+            <label>Delete by:</label><br>
+            <input type="radio" id="by_name" name="delete_method" value="name" required>
+            <label for="by_name">Product Name</label><br>
+            <input type="radio" id="by_barcode" name="delete_method" value="barcode" required>
+            <label for="by_barcode">Barcode Number</label><br><br>
+
+            <label for="product_name">Product Name (if selected):</label>
+            <input type="text" id="product_name" name="product_name"><br><br>
+
+            <label for="barcode_num">Barcode Number (if selected):</label>
+            <input type="text" id="barcode_num" name="barcode_num"><br><br>
+
+            <input type="submit" value="Delete Product">
+        </form>
+    </div>
+</body>
+</html>
