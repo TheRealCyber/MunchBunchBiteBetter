@@ -1,0 +1,7 @@
+name: munchbunchbitebetter
+type: docker
+
+dockerfile: Dockerfile
+routes:
+  - src: /
+    dest: /
