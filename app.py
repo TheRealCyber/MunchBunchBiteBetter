@@ -5,7 +5,7 @@ import re
 import os
 from getpass import getpass
 import cv2
-from pyzbar import pyzbar
+import pyzbar
 from pyNutriScore import NutriScore
 from flask import Flask, render_template, request, redirect, session, url_for,jsonify,flash
 import cv2
