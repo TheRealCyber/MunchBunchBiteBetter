@@ -66,8 +66,6 @@ MunchBunchBiteBetter is a smart, user-friendly food and nutrition app designed t
 - Saloni Sivakumar 
 - Aneesh Mathur 
 - Mansa Mohanty 
-- Prarthana Subudhi 
-
 
 Institution: MPSTME, NMIMS Mumbai Campus  
 Department: Computer Engineering (CSBS - 3rd Year)
